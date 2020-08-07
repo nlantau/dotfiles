@@ -1,0 +1,7 @@
+" Usage pull/push dotfiles
+
+cd $HOME
+dotfiles fetch -u dotfiles
+dotfiles add [file]
+dotfiles commit -m "[msg]"
+dotfiles push dotfiles --mirror
