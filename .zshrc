@@ -32,7 +32,7 @@ alias grep="ggrep --color"
 alias d="deactivate"
 
 # Git bare
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Directory aliases
 alias g="cd $HOME/Docs/GitHub/"
