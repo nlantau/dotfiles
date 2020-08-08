@@ -14,7 +14,7 @@ setopt PROMPT_SUBST
 setopt autocd
 
 # PS1 & RPS1
-PROMPT='λ %T $fg[green]%~ $reset_color% '
+PROMPT='λ $fg[green]%1~ $reset_color% > '
 RPROMPT='${vcs_info_msg_0_}' 
 
 # ALIAS
