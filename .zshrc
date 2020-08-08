@@ -1,5 +1,8 @@
 # nlantau .zshrc 
 
+# Default programs
+export EDITOR="nvim"
+
 # AUTOLOAD
 autoload -Uz compinit && compinit	# Completion
 autoload -U colors && colors		# Colored prompt output
@@ -20,8 +23,8 @@ RPROMPT='${vcs_info_msg_0_}'
 
 # ALIAS
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
-        alias vz="nvim $HOME/.zshrc"
-        alias vn="nvim $HOME/.config/nvim/init.vim"
+        alias vz="$EDITOR $HOME/.zshrc"
+        alias vn="$EDITOR $HOME/.config/nvim/init.vim"
         alias grep="ggrep --color"
         alias g="cd $HOME/Docs/GitHub/"
         alias code='/Applications/Visual\ Studio\ Code.app/
@@ -35,9 +38,9 @@ elif [ "$(uname 2> /dev/null)" != "Darwin" ]; then
         echo "TODO"
 fi
 
-alias vim="nvim"
-alias vi="nvim"
-alias v="nvim"
+alias vim="$EDITOR"
+alias vi="$EDITOR"
+alias v="$EDITOR"
 alias l="ls -G"
 alias ls="ls -G"
 alias la="ls -aG"
