@@ -3,7 +3,7 @@
 if !exists('g:vscode')
 
 " ----- neovim3 venv --------------------------------------------------
-let g:python3_host_prog ='/Users/nlantau/.virtualenvs/neovim3/bin/python'
+let g:python3_host_prog ='$HOME/.virtualenvs/neovim3/bin/python'
 
 " ----- vim-plug ------------------------------------------------------
 call plug#begin('~/.config/nvim/plugged')

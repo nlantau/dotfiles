@@ -18,8 +18,22 @@ PROMPT='λ $fg[green]%1~ $reset_color% > '
 RPROMPT='${vcs_info_msg_0_}' 
 
 # ALIAS
-alias vz="nvim $HOME/.zshrc"
-alias vn="nvim $HOME/.config/nvim/init.vim"
+if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
+        alias vz="nvim $HOME/.zshrc"
+        alias vn="nvim $HOME/.config/nvim/init.vim"
+        alias grep="ggrep --color"
+        alias g="cd $HOME/Docs/GitHub/"
+        alias code='/Applications/Visual\ Studio\ Code.app/
+                \Contents/MacOS/Electron > /dev/null 2>&1 &!; cd $HOME'
+        alias discord='/Applications/
+                \Discord.app/Contents/MacOS/Discord > /dev/null 2>&1 &!; cd $HOME'
+        alias subl='/Applications/Sublime\ Text.app/Contents/
+                \MacOS/Sublime\ Text > /dev/null 2>&1 &!; cd $HOME'
+        alias da="cd $HOME/Docs/GitHub/DA110FHT20/"
+elif [ "$(uname 2> /dev/null)" != "Darwin" ]; then
+        echo "TODO"
+fi
+
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
@@ -28,38 +42,30 @@ alias ls="ls -G"
 alias la="ls -aG"
 alias ll="ls -lahG"
 alias c="clear"
-alias grep="ggrep --color"
 alias d="deactivate"
 
 # Git bare
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-# Directory aliases
-alias g="cd $HOME/Docs/GitHub/"
-alias da="cd $HOME/Docs/GitHub/DA110FHT20/"
-
-# Application Aliases with dev/null and disown
-alias code='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron > /dev/null 2>&1 &!'
-alias discord='/Applications/Discord.app/Contents/MacOS/Discord > /dev/null 2>&1 &!'
-alias subl='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text > /dev/null 2>&1 &!'
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/nlantau/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/nlantau/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/nlantau/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/nlantau/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
+        __conda_setup="$('/Users/nlantau/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+        if [ $? -eq 0 ]; then
+            eval "$__conda_setup"
+        else
+            if [ -f "/Users/nlantau/miniconda3/etc/profile.d/conda.sh" ]; then
+                . "/Users/nlantau/miniconda3/etc/profile.d/conda.sh"
+            else
+                export PATH="/Users/nlantau/miniconda3/bin:$PATH"
+            fi
+        fi
+        unset __conda_setup
 # <<< conda initialize <<<
 
-# Don't want conda to be activated from start
-conda deactivate
+        # Don't want conda to be activated from start
+        conda deactivate
+fi
 
 # Run NeoFetch
 neofetch
