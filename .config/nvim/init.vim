@@ -16,6 +16,9 @@ Plug 'morhetz/gruvbox'                              " Current theme
 Plug 'ryanoasis/vim-devicons'
 Plug 'Shougo/deoplete.nvim', {'do':':UpdateRemotePlugins'}
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'darfink/vim-plist'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " ----- Leader & Mappings ---------------------------------------------
@@ -25,10 +28,23 @@ let NERDTreeShowHidden=1
 " ----- Gruvbox -------------------------------------------------------
 let g:gruvbox_contrast_dark = 'hard'
 
+" ----- plist  --------------------------------------------------------
+let g:plist_display_format = 'xml'
+
 " ----- Airline -------------------------------------------------------
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 0
+
+" ----- Deoplete ------------------------------------------------------
+let g:deoplete#enable_at_startup = 1
+
+" ----- FZF & Buffers -------------------------------------------------
+let g:fzf_buffers_jump = 1
+
+nmap <Leader>n :bnext<CR>
+nmap <Leader>f :Files ~/<CR>
+nmap <Leader>t :bd<CR>
 
 " ----- Navigation ----------------------------------------------------
 nmap <S-j> 10j                                      
@@ -62,9 +78,6 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " ----- Python map ----------------------------------------------------
 nnoremap <Leader>r :!python3 %<CR>
-
-" ----- Deoplete ------------------------------------------------------
-let g:deoplete#enable_at_startup = 1
 
 " ----- Vertical Split init.vim ---------------------------------------
 nnoremap <Leader>v :vsplit ~/.config/nvim/init.vim<CR>
