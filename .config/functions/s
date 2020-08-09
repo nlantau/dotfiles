@@ -1,1 +1,1 @@
-source $HOME/.virtualenvs/"${1:-DA110FHT20}"/bin/activate
+source $VIRTENVDIR/"${1:-DA110FHT20}"/bin/activate
