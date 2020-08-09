@@ -4,7 +4,7 @@
 export EDITOR="nvim"
 
 # ~/ Clean-up 
-export CONFIGDIR=~/.config/
-export ZDOTDIR=~/.config/zsh
-
+export CONFIGDIR="$HOME/.config"
+export ZDOTDIR="$HOME/.config/zsh"
+export HISTFILE="$HOME/.cache/zsh"
 
