@@ -2,21 +2,32 @@
 
 
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
+
+# cli commands
+alias grep="ggrep --color"
+
+# Editor commands
 alias vz="$EDITOR $ZDOTDIR/.zshrc"
 alias vn="$EDITOR $CONFIGDIR/nvim/init.vim"
-alias grep="ggrep --color"
-alias g="cd $HOME/Docs/GitHub/"
+
+# cd alias
+alias cg="cd $GITHUBDIR"
+alias cc="cd $CONFIGDIR"
+alias da="cd $GITHUDBIR/DA110FHT20/"
+
+# exec alias
 alias code='/Applications/Visual\ Studio\ Code.app/
         \Contents/MacOS/Electron > /dev/null 2>&1 &!; cd $HOME'
 alias discord='/Applications/
         \Discord.app/Contents/MacOS/Discord > /dev/null 2>&1 &!; cd $HOME'
 alias subl='/Applications/Sublime\ Text.app/Contents/
         \MacOS/Sublime\ Text > /dev/null 2>&1 &!; cd $HOME'
-alias da="cd $HOME/Docs/GitHub/DA110FHT20/"
+
 elif [ "$(uname 2> /dev/null)" != "Darwin" ]; then
         echo "TODO"
 fi
 
+# Applies to UNIX & Linux
 alias vim="$EDITOR"
 alias vi="$EDITOR"
 alias v="$EDITOR"
