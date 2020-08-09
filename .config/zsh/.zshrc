@@ -15,6 +15,9 @@ autoload -U colors && colors		# Colored prompt output
 autoload -Uz vcs_info 			    # Git prompt 
 precmd() { vcs_info } 
 
+fpath=($HOME/.config/functions $fpath)
+autoload ez fa fd fdr fe gp gs s
+
 # SETOPT
 setopt PROMPT_SUBST
 setopt autocd
@@ -22,7 +25,6 @@ setopt autocd
 # ZSTYLE
 zstyle ':vcs_info:git:*' formats "%{$fg[red]%}%s%{$reset_color%} %b" 
 zstyle ':completion:*' completer _complete _approximate
-
 
 # PS1 & RPS1
 PROMPT='λ $fg[green]%1~ $reset_color% > '
@@ -52,41 +54,4 @@ fi
 neofetch
 
 # end
-
-# exec zsh
-ez() {exec zsh;}
-
-# Activate virtualenv (default DA110FHT20)
-s() {source $HOME/.virtualenvs/"${1:-DA110FHT20}"/bin/activate;}
-
-# Git function (default message "update")
-gp() {git add --all && git commit -m "${1:-update}" && git push --all;}
-
-# Git status
-gs() {git status;}
-
-
-# FZF functions
-# fd - cd to selected directory
-fd() {local dir; dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) && cd "$dir";}
-
-# fda - including hidden directories
-fa() {local dir; dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir";}
-
-
-# fdr - cd to selected parent directory
-fdr() {local declare dirs=(); get_parent_dirs() {
-    if [[ -d "${1}" ]]; then dirs+=("$1"); else return; fi
-    if [[ "${1}" == '/' ]]; then; for _dir in "${dirs[@]}"; do echo $_dir; done
-    else; get_parent_dirs $(dirname "$1"); fi;}
-  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf-tmux --tac); cd "$DIR";}
-
-# fe [FUZZY PATTERN] - Open the selected file with the default editor
-#   - Bypass fuzzy finder if there's only one match (--select-1)
-#   - Exit if there's no match (--exit-0)
-fe() {IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && ${EDITOR:-nvim} "${files[@]}";}
-
-
 

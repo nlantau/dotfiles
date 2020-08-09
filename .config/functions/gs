@@ -1,0 +1,2 @@
+# Git status
+gs() {git status;}
