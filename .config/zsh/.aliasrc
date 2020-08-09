@@ -1,0 +1,32 @@
+#!/usr/bin/sh
+
+
+if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
+        alias vz="$EDITOR $ZDOTDIR/.zshrc"
+        alias vn="$EDITOR $HOME/.config/nvim/init.vim"
+        alias grep="ggrep --color"
+        alias g="cd $HOME/Docs/GitHub/"
+        alias code='/Applications/Visual\ Studio\ Code.app/
+                \Contents/MacOS/Electron > /dev/null 2>&1 &!; cd $HOME'
+        alias discord='/Applications/
+                \Discord.app/Contents/MacOS/Discord > /dev/null 2>&1 &!; cd $HOME'
+        alias subl='/Applications/Sublime\ Text.app/Contents/
+                \MacOS/Sublime\ Text > /dev/null 2>&1 &!; cd $HOME'
+        alias da="cd $HOME/Docs/GitHub/DA110FHT20/"
+elif [ "$(uname 2> /dev/null)" != "Darwin" ]; then
+        echo "TODO"
+fi
+
+alias vim="$EDITOR"
+alias vi="$EDITOR"
+alias v="$EDITOR"
+alias l="ls -G"
+alias ls="ls -G"
+alias la="ls -aG"
+alias ll="ls -lahG"
+alias c="clear"
+alias d="deactivate"
+
+# Git bare
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+
