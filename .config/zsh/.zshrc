@@ -2,7 +2,7 @@
 
 # Source aliases, fzf (incl. functions)
 [ -f "${HOME}/.config/zsh/aliasrc" ] && source "${HOME}/.config/zsh/aliasrc"
-[ -f "${HOME}/.config/fzf" ] && source "${HOME}/.config/fzf/.fzf"
+[ -f "${HOME}/.config/fzf/.fzf.zsh" ] && source "${HOME}/.config/fzf/.fzf.zsh"
 
 # History in cache directory
 HISTSIZE=10000
