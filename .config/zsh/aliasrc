@@ -3,7 +3,7 @@
 
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
 alias vz="$EDITOR $ZDOTDIR/.zshrc"
-alias vn="$EDITOR $HOME/.config/nvim/init.vim"
+alias vn="$EDITOR $CONFIGDIR/nvim/init.vim"
 alias grep="ggrep --color"
 alias g="cd $HOME/Docs/GitHub/"
 alias code='/Applications/Visual\ Studio\ Code.app/
