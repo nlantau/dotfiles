@@ -6,7 +6,7 @@
 * .fzf
 * nvim/init.vim
 * Notes/git_bare
-
+* functions
 
 ### TODO
 - [ ] UNIX/Linux intercompatibility
