@@ -17,7 +17,7 @@ precmd() { vcs_info }
 
 # Add ~/.config/functions/ to fpath
 fpath=($HOME/.config/functions $fpath)
-autoload ez fa fd fdr fe gp gs s
+autoload ez fa fd fdr ff gp gs s
 
 # setopt
 setopt PROMPT_SUBST
@@ -44,7 +44,7 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
         conda deactivate; fi
 
 # Run NeoFetch
-neofetch
+#neofetch
 
 # end
 

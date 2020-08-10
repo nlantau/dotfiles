@@ -3,17 +3,24 @@
 
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
 
+# ls color
+colorflag="-G"
+
 # cli commands
 alias grep="ggrep --color"
 
 # Editor commands
 alias vz="$EDITOR $ZDOTDIR/.zshrc"
 alias vn="$EDITOR $CONFIGDIR/nvim/init.vim"
+alias va="$EDITOR $ZDOTDIR/aliasrc"
+alias vzp="$EDITOR $ZDOTDIR/.zprofile"
+alias ali="$EDITOR $ZDOTDIR/aliasrc"
 
 # cd alias
 alias cg="cd $GITHUBDIR"
 alias cc="cd $CONFIGDIR"
 alias da="cd $GITHUBDIR/DA110FHT20/"
+alias sa="cd $SCHOOL"
 
 # exec alias
 alias code='/Applications/Visual\ Studio\ Code.app/
@@ -24,20 +31,29 @@ alias subl='/Applications/Sublime\ Text.app/Contents/
         \MacOS/Sublime\ Text > /dev/null 2>&1 &!; cd $HOME'
 
 elif [ "$(uname 2> /dev/null)" != "Darwin" ]; then
-        echo "TODO"
+
+# ls color
+colorflag="--color"
+
 fi
+
 
 # Applies to UNIX & Linux
 alias vim="$EDITOR"
 alias vi="$EDITOR"
 alias v="$EDITOR"
-alias l="ls -G"
-alias ls="ls -G"
-alias la="ls -aG"
-alias ll="ls -lahG"
+alias l="ls ${colorflag}"
+alias ls="ls ${colorflag}"
+alias la="ls -a ${colorflag}"
+alias ll="ls -lah ${colorflag}"
 alias c="clear"
 alias d="deactivate"
 
 # Git bare
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
+# tmux
+alias ta='tmux attach'
+alias tls='tmux ls'
+alias tat='tmux attach -t'
+alias tns='tmux new-session -s'

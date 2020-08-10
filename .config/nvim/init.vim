@@ -1,12 +1,15 @@
 " nlantau nvim config (init.vim)
 
+" ----- Leader --------------------------------------------------------
+let mapleader=","                                   " Leader is comma
+
 if !exists('g:vscode')
 
 " ----- neovim3 venv --------------------------------------------------
-let g:python3_host_prog ='$HOME/.virtualenvs/neovim3/bin/python'
+let g:python3_host_prog ='$VIRTENVDIR/neovim3/bin/python'
 
 " ----- vim-plug ------------------------------------------------------
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('$CONFIGDIR/nvim/plugged')
 Plug 'scrooloose/nerdtree'                          " NERDTree
 Plug 'vim-airline/vim-airline'                      " better statusline
 Plug 'vim-airline/vim-airline-themes'               " ... this too
@@ -22,7 +25,6 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " ----- Leader & Mappings ---------------------------------------------
-let mapleader=","                                   " leader is comma
 let NERDTreeShowHidden=1
 
 " ----- Gruvbox -------------------------------------------------------
@@ -45,22 +47,26 @@ let g:fzf_buffers_jump = 1
 nmap <Leader>n :bnext<CR>
 nmap <Leader>f :Files ~/<CR>
 nmap <Leader>t :bd<CR>
-
+nmap <Leader>l :ls<CR>
 " ----- Navigation ----------------------------------------------------
-nmap <S-j> 10j                                      
-vmap <S-j> 10j                                      
+nmap <S-j> 10j<CR>                                      
+vmap <S-j> 10j<CR>                                      
 
-nmap <S-k> 10k                                      
-vmap <S-k> 10k                                      
+nmap <S-k> 10k<CR>                                      
+vmap <S-k> 10k<CR>                                      
 
 nmap <S-d> <C-d>                                    
 nmap <S-u> <C-u>                                    
 
 " ----- Save And Close ------------------------------------------------
-nmap <leader>w :w<CR>                               
-nmap <leader>x :x<CR>                               
-nmap <leader>q :q<CR>                               
-nmap <Leader>Q :q!<CR>                              
+
+" ----- Clear Highlight -----------------------------------------------
+nnoremap <ESC> :noh<CR><ESC>
+
+map <Leader><Leader> :w<CR>
+map <Leader>x :x<CR>
+map <Leader>q :q<CR>
+map <Leader>Q :q!<CR>
 
 " ----- Split Navigation & Window Resize ------------------------------
 nnoremap <C-j> <C-w><C-j>
@@ -73,17 +79,17 @@ nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
-nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <Silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <Silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
-" ----- Python map ----------------------------------------------------
-nnoremap <Leader>r :!python3 %<CR>
+" ----- Register map --------------------------------------------------
+nnoremap <Leader>r :reg<CR>
 
 " ----- Vertical Split init.vim ---------------------------------------
-nnoremap <Leader>v :vsplit ~/.config/nvim/init.vim<CR>
+nnoremap <Leader>v :vsplit $CONFIGDIR/nvim/init.vim<CR>
 
 " ----- NERDTree map --------------------------------------------------
-map <C-b> :NERDTreeToggle<CR>
+map <Leader>b :NERDTreeToggle<CR>
 
 " ----- Coloring ------------------------------------------------------
 set background=dark
@@ -99,7 +105,7 @@ set clipboard+=unnamedplus
 set showcmd                                     " show command in bottom bar
 set laststatus=0                                " window will always have a status line
 set nobackup noswapfile
-set updatetime=100                              " default = 4000
+set updatetime=100                              " default = 400
 set splitbelow splitright
 
 endif                                           " g:vscode
