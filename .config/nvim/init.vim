@@ -3,7 +3,7 @@
 " ----- Leader --------------------------------------------------------
 let mapleader=","                                   " Leader is comma
 
-if !exists('g:vscode')
+"if !exists('g:vscode')
 
 " ----- neovim3 venv --------------------------------------------------
 let g:python3_host_prog ='$VIRTENVDIR/neovim3/bin/python'
@@ -22,6 +22,8 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'darfink/vim-plist'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 " ----- Leader & Mappings ---------------------------------------------
@@ -51,18 +53,18 @@ nmap <Leader>l :ls<CR>
 " ----- Navigation ----------------------------------------------------
 nmap <S-j> 10j<CR>                                      
 vmap <S-j> 10j<CR>                                      
-
 nmap <S-k> 10k<CR>                                      
 vmap <S-k> 10k<CR>                                      
-
 nmap <S-d> <C-d>                                    
 nmap <S-u> <C-u>                                    
 
-" ----- Save And Close ------------------------------------------------
+" ----- Marking -------------------------------------------------------
+nnoremap ´ `
 
 " ----- Clear Highlight -----------------------------------------------
 nnoremap <ESC> :noh<CR><ESC>
 
+" ----- Save And Close ------------------------------------------------
 map <Leader><Leader> :w<CR>
 map <Leader>x :x<CR>
 map <Leader>q :q<CR>
@@ -103,12 +105,12 @@ set tabstop=4 softtabstop=4 expandtab	        " tabs are space
 set autoindent copyindent
 set clipboard+=unnamedplus
 set showcmd                                     " show command in bottom bar
-set laststatus=0                                " window will always have a status line
+set laststatus=0
 set nobackup noswapfile
 set updatetime=100                              " default = 400
 set splitbelow splitright
 
-endif                                           " g:vscode
+"endif                                           " g:vscode
 
 
 
