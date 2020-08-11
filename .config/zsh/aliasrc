@@ -1,6 +1,5 @@
 #!/usr/bin/sh
 
-
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
 
 # ls color
@@ -48,6 +47,7 @@ alias la="ls -a ${colorflag}"
 alias ll="ls -lah ${colorflag}"
 alias c="clear"
 alias d="deactivate"
+alias ..="cd .."
 
 # Git bare
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"

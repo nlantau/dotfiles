@@ -15,6 +15,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' completer _complete _correct _approximate
 zstyle ":completion:*" matcher-list 'm:{A-Zöäüa-zÖÄÜ}={a-zÖÄÜA-Zöäü}'
+zstyle ':completion:*' special-dirs true
 
 # Auto/tab complete, colors & git prompt
 autoload -Uz compinit && compinit   # Completion

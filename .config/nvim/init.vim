@@ -4,6 +4,7 @@
 let mapleader=","                                   " Leader is comma
 
 "if !exists('g:vscode')
+"seems like vscode accepts current init.vim
 
 " ----- neovim3 venv --------------------------------------------------
 let g:python3_host_prog ='$VIRTENVDIR/neovim3/bin/python'
@@ -59,7 +60,7 @@ nmap <S-d> <C-d>
 nmap <S-u> <C-u>                                    
 
 " ----- Marking -------------------------------------------------------
-nnoremap ´ `
+nnoremap ' `
 
 " ----- Clear Highlight -----------------------------------------------
 nnoremap <ESC> :noh<CR><ESC>
