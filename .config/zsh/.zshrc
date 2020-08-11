@@ -17,14 +17,15 @@ zstyle ':completion:*' completer _complete _correct _approximate
 zstyle ":completion:*" matcher-list 'm:{A-Zöäüa-zÖÄÜ}={a-zÖÄÜA-Zöäü}'
 zstyle ':completion:*' special-dirs true
 
+# Git info
+zstyle ':vcs_info:git:*' formats "%F{red}%s%f %b" 
+
 # Auto/tab complete, colors & git prompt
 autoload -Uz compinit && compinit   # Completion
 autoload -U colors && colors		# Colored prompt output
 autoload -Uz vcs_info 			    # Git prompt 
 precmd() { vcs_info } 
 
-# Git info
-zstyle ':vcs_info:git:*' formats "%{$fg[red]%}%s%{$reset_color%} %b" 
 
 # vi mode
 bindkey -v
@@ -47,7 +48,7 @@ setopt PROMPT_SUBST
 # PS1 & RPS1
 PROMPT="λ %F{green}%1~ %f > "
 #PROMPT="$ %1d > "
-RPROMPT="${vcs_info_msg_0_}" 
+RPROMPT='${vcs_info_msg_0_}' 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
