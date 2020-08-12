@@ -47,17 +47,18 @@ let g:deoplete#enable_at_startup = 1
 " ----- FZF & Buffers -------------------------------------------------
 let g:fzf_buffers_jump = 1
 
-nmap <Leader>n :bnext<CR>
-nmap <Leader>f :Files ~/<CR>
-nmap <Leader>t :bd<CR>
-nmap <Leader>l :ls<CR>
+nnoremap <Leader>n :bnext<CR>
+nnoremap <Leader>f :Files ~/<CR>
+nnoremap <Leader>t :bd<CR>
+nnoremap <Leader>l :ls<CR>
+
 " ----- Navigation ----------------------------------------------------
-nmap <S-j> 10j<CR>                                      
-vmap <S-j> 10j<CR>                                      
-nmap <S-k> 10k<CR>                                      
-vmap <S-k> 10k<CR>                                      
-nmap <S-d> <C-d>                                    
-nmap <S-u> <C-u>                                    
+nnoremap <S-j> 10j<CR>                                      
+vnoremap <S-j> 10j<CR>                                      
+nnoremap <S-k> 10k<CR>                                      
+vnoremap <S-k> 10k<CR>                                      
+nnoremap <S-d> <C-d>                                    
+nnoremap <S-u> <C-u>                                    
 
 " ----- Marking -------------------------------------------------------
 nnoremap ' `
@@ -66,10 +67,10 @@ nnoremap ' `
 nnoremap <ESC> :noh<CR><ESC>
 
 " ----- Save And Close ------------------------------------------------
-map <Leader><Leader> :w<CR>
-map <Leader>x :x<CR>
-map <Leader>q :q<CR>
-map <Leader>Q :q!<CR>
+nnoremap <Leader><Leader> :w<CR>
+nnoremap <Leader>x :x<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :q!<CR>
 
 " ----- Split Navigation & Window Resize ------------------------------
 nnoremap <C-j> <C-w><C-j>
@@ -85,6 +86,9 @@ nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <Silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
+" ----- Substitue map -------------------------------------------------
+nnoremap S :%s///g<Left><Left><Left>
+
 " ----- Register map --------------------------------------------------
 nnoremap <Leader>r :reg<CR>
 
@@ -92,7 +96,7 @@ nnoremap <Leader>r :reg<CR>
 nnoremap <Leader>v :vsplit $CONFIGDIR/nvim/init.vim<CR>
 
 " ----- NERDTree map --------------------------------------------------
-map <Leader>b :NERDTreeToggle<CR>
+nnoremap <Leader>b :NERDTreeToggle<CR>
 
 " ----- Coloring ------------------------------------------------------
 set background=dark
