@@ -105,15 +105,43 @@ colorscheme gruvbox
 
 " ----- Editor Config -------------------------------------------------
 set encoding=UTF-8
-set number relativenumber cursorline wildmenu   " visual autocomplete for command menu
-set tabstop=4 softtabstop=4 expandtab	        " tabs are space
-set autoindent copyindent
-set clipboard+=unnamedplus
+set clipboard=unnamed
+
+" Searching
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+set number
+set relativenumber
+set wrap
+set wrapmargin=8
+set showbreak=↪
+set autoindent
+set so=7
+set showmatch
+set cursorline 
+set wildmenu   " visual autocomplete for command menu
+
+" Tab control
+set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+set tabstop=4 " the visible width of tabs
+set softtabstop=4 " edit as if the tabs are 4 characters wide
+set shiftwidth=4 " number of spaces to use for indent and unindent
+set shiftround " round indent to a multiple of 'shiftwidth'
+
 set showcmd                                     " show command in bottom bar
 set laststatus=0
-set nobackup noswapfile
+set nobackup 
+set noswapfile
 set updatetime=100                              " default = 400
-set splitbelow splitright
+set splitbelow 
+set splitright
+
+" Specific spacing depening on filetype
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType sh setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "endif                                           " g:vscode
 
