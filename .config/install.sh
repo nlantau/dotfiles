@@ -5,7 +5,6 @@
 #		NOT COMPLETE. Do NOT use!
 #
 
-# Source colors.sh
 
 if [[ -f ./colors.sh ]]; then
 	source ./colors.sh
@@ -15,14 +14,14 @@ fi
 
 # Start installation
 
-echo -e "${light_red}Installing dotfiles ${default} \n"
-echo -e "[${red}*${default}] Checking your system..."
+echo -e "${light_green}Installing dotfiles ${default} \n"
+echo -e "[${green}*${default}] Checking your system..."
 
 # Check OS
 
 if [[ "$(uname)" == "Darwin" ]]; then
 	echo -e "> Running on MacOS \n"
-	echo -e "[${red}*${default}] Checking if HomeBrew is installed..."
+	echo -e "[${green}*${default}] Checking if HomeBrew is installed..."
 	
 	# Check Brew
 	if test ! "$( command -v brew)"; then
@@ -47,7 +46,7 @@ fi
 
 # Setting ZSH as shell
 
-echo -e "[${red}*${default}] Checking current shell..."
+echo -e "[${green}*${default}] Checking current shell..."
 
 # Check current shell
 
@@ -70,7 +69,7 @@ fi
 [[ -d ~/.virtualenvs ]] && VIRDIR=~/.virtualenvs
 [[ -d $VIRDIR ]] && folders=$(ls $VIRDIR)
 
-echo -e "[${red}*${default}] Checking if virtualenvs directory exists..."
+echo -e "[${green}*${default}] Checking if virtualenvs directory exists..."
 
 if ! [[ -d $HOME/.virtualenvs ]]; then
 	echo -e "> Creating virtualenvs directory..."
@@ -81,7 +80,7 @@ if ! [[ -d $HOME/.virtualenvs ]]; then
 
 else
 	echo -e "> ${VIRDIR} already exists. Skipping...\n"
-	echo -e "[${red}*${default}] Checking existing venvs..."
+	echo -e "[${green}*${default}] Checking existing venvs..."
 	echo -e "> Current venvs in $VIRDIR:"
 	
 	# Print all virtual environments
