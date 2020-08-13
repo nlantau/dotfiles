@@ -21,16 +21,8 @@ autoload -U colors && colors		# Colored prompt output
 autoload -Uz vcs_info 			    # Git prompt 
 precmd() { vcs_info } 
 
-
 # vi mode
 bindkey -v
-
-# vim keys in tab complete menu
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
 
 # Add ~/.config/functions/ to fpath
 fpath=($HOME/.config/functions $fpath)
