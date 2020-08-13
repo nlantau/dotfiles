@@ -6,35 +6,33 @@
 #
 #
 #
-echo "> Installing dotfiles"
+echo -e "Installing dotfiles \n"
 
 echo "Checking your system..."
 
 if [[ "$(uname)" == "Darwin" ]]; then
 
-	echo "> Running on MacOS"
+	echo -e "> Running on MacOS \n"
 	echo "Checking if HomeBrew is installed..."
 	
 	if test ! "$( command -v brew)"; then
 		
-		echo "> Installing HomeBrew"
+		echo -e "> Installing HomeBrew \n"
 		ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
 		
 		brew bundle install
 
-
 		# TODO
 		# Install fzf
-		#
 
 	elif test "$( command -v brew)"; then
 
-		echo "> HomeBrew already installed. Skipping..."
+		echo -e "> HomeBrew already installed. Skipping...\n"
 	fi
 	
 else
 
-	echo "> Install.sh only modified for MacOS."
+	echo -e "> Install.sh only modified for MacOS. \n"
 	exit
 
 fi
@@ -46,15 +44,16 @@ echo "Checking current shell..."
 
 if [[ $SHELL == $(which zsh) ]]; then
 
-	echo -ne "> Active shell:\\n> " 
-	echo $SHELL | cut -d / -f 3 
+	SYS_SHELL="$(echo $SHELL | cut -d / -f 3 )"
+	
+	echo -e "> Active shell: ${SYS_SHELL}\n" 
 	
 elif [[ $SHELL == $(which bash) ]]; then
 
 	echo "> Bash active..."
 	echo "> Changing to ZSH..."
 	chsh -s "$(whick zsh)"
-	echo "> Default shell changed to ZSH"
+	echo -e "> Default shell changed to ZSH\n"
 
 fi
 
@@ -71,7 +70,7 @@ if ! [[ -d $HOME/.virtualenvs ]]; then
 	
 	echo "> Creating virtualenvs directory..."
 	mkdir -p ~/.virtualenvs
-	echo "> Done"
+	echo -e "> Done\n"
 
 	# TODO
 	# Check venv 
@@ -79,7 +78,7 @@ if ! [[ -d $HOME/.virtualenvs ]]; then
 
 else
 
-	echo "> ${VIRDIR} already exists. Skipping"
+	echo -e "> ${VIRDIR} already exists. Skipping...\n"
 	echo "Checking existing venvs..."
 
 	echo "> Current venvs in $VIRDIR"
@@ -87,6 +86,7 @@ else
 	for dir in $folders; do
 		echo "> $dir"
 	done
+	echo ''
 
 fi
 
