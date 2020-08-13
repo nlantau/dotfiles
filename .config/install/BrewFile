@@ -1,75 +1,42 @@
-
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-
-brew "cairo"
-brew "ccat"
-brew "coreutils"
-brew "docbook"
-brew "docbook-xsl"
-brew "fontconfig"
-brew "freetype"
-brew "fzf"
-brew "gcc"
-brew "gdbm"
-brew "gettext"
-brew "ghostscript"
-brew "glib"
-brew "gmp"
-brew "gnu-getopt"
-brew "gotop"
-brew "grep"
-brew "htop"
-brew "ilmbase"
-brew "imagemagick"
-brew "isl"
-brew "jpeg"
-brew "libde265"
-brew "libevent"
-brew "libffi"
-brew "libheif"
-brew "liblqr"
-brew "libmpc"
-brew "libomp"
-brew "libpng"
-brew "libtermkey"
-brew "libtiff"
-brew "libtool"
-brew "libuv"
-brew "libvterm"
-brew "little-cms2"
-brew "luajit"
-brew "lzo"
-brew "mpfr"
-brew "msgpack"
-brew "ncurses"
-brew "neofetch"
-brew "neovim"
-brew "nspr"
-brew "nss"
-brew "openexr"
-brew "openjpeg"
+# Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
-brew "pcre"
-brew "pixman"
-brew "pkg-config"
-brew "poppler"
-brew "python@3.8"
-brew "qt"
-brew "ranger"
-brew "readline"
-brew "screenresolution"
-brew "shared-mime-info"
-brew "sqlite"
-brew "tree"
-brew "unibilium"
-brew "utf8proc"
-brew "webp"
-brew "x265"
-brew "xmlto"
+# General-purpose data compression with high compression ratio
 brew "xz"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
+# Core application library for C
+brew "glib"
+# Like cat but displays content with syntax highlighting
+brew "ccat"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU compiler collection
+brew "gcc"
+# Terminal based graphical activity monitor inspired by gtop and vtop
+brew "gotop"
+# GNU grep, egrep and fgrep
+brew "grep"
+# Improved top (interactive process viewer)
+brew "htop"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# File browser
+brew "ranger"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# General-purpose lossless data-compression library
 brew "zlib"
-
 cask "keycastr"
-

@@ -1,13 +1,8 @@
 # nlantau .zshrc 
 
 # Source aliases, fzf (incl. functions)
-[ -f "${HOME}/.config/zsh/aliasrc" ] && source "${HOME}/.config/zsh/aliasrc"
-[ -f "${HOME}/.config/fzf/.fzf.zsh" ] && source "${HOME}/.config/fzf/.fzf.zsh"
-
-# History in cache directory
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
+[ -f "${ZDOTDIR}/aliasrc" ] && source "${ZDOTDIR}/aliasrc"
+[ -f "${XDG_CONFIG_HOME}/fzf/.fzf.zsh" ] && source "${XDG_CONFIG_HOME}/fzf/.fzf.zsh"
 
 # Load completions system
 zmodload -i zsh/complist

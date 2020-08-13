@@ -7,10 +7,10 @@ let mapleader=","                                   " Leader is comma
 "seems like vscode accepts current init.vim
 
 " ----- neovim3 venv --------------------------------------------------
-let g:python3_host_prog ='$VIRTENVDIR/neovim3/bin/python'
+let g:python3_host_prog ='$VIRENVDIR/neovim3/bin/python'
 
 " ----- vim-plug ------------------------------------------------------
-call plug#begin('$CONFIGDIR/nvim/plugged')
+call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 Plug 'scrooloose/nerdtree'                          " NERDTree
 Plug 'vim-airline/vim-airline'                      " better statusline
 Plug 'vim-airline/vim-airline-themes'               " ... this too
@@ -52,6 +52,9 @@ nnoremap <Leader>f :Files ~/<CR>
 nnoremap <Leader>t :bd<CR>
 nnoremap <Leader>l :ls<CR>
 
+" ----- Neovim --------------------------------------------------------
+nnoremap <Leader>sv :source $NVIMRC<CR>
+
 " ----- Navigation ----------------------------------------------------
 nnoremap <S-j> 10j<CR>                                      
 vnoremap <S-j> 10j<CR>                                      
@@ -67,6 +70,7 @@ nnoremap ' `
 nnoremap <ESC> :noh<CR><ESC>
 
 " ----- Save And Close ------------------------------------------------
+inoremap jk <ESC>
 nnoremap <Leader><Leader> :w<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
@@ -93,7 +97,7 @@ nnoremap S :%s///g<Left><Left><Left>
 nnoremap <Leader>r :reg<CR>
 
 " ----- Vertical Split init.vim ---------------------------------------
-nnoremap <Leader>v :vsplit $CONFIGDIR/nvim/init.vim<CR>
+nnoremap <Leader>v :vsplit $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
 " ----- NERDTree map --------------------------------------------------
 nnoremap <Leader>b :NERDTreeToggle<CR>
