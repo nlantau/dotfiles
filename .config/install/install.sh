@@ -20,7 +20,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
 		echo -e "> Installing HomeBrew \n"
 		ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
 		
-		brew bundle install
 
 		# TODO
 		# Install fzf
@@ -29,7 +28,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
 		echo -e "> HomeBrew already installed. Skipping...\n"
 	fi
-	
+		
+		echo "> Installing HomeBrew Bundle.."
+		brew bundle install
+
 else
 
 	echo -e "> Install.sh only modified for MacOS. \n"
@@ -52,7 +54,7 @@ elif [[ $SHELL == $(which bash) ]]; then
 
 	echo "> Bash active..."
 	echo "> Changing to ZSH..."
-	chsh -s "$(whick zsh)"
+	chsh -s "$(command -v zsh)"
 	echo -e "> Default shell changed to ZSH\n"
 
 fi
