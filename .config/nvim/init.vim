@@ -91,7 +91,7 @@ nnoremap <Silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <Silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " ----- Substitue map -------------------------------------------------
-nnoremap S :%s///g<Left><Left><Left>
+nnoremap S :%s//g<Left><Left>
 
 " ----- Register map --------------------------------------------------
 nnoremap <Leader>r :reg<CR>
