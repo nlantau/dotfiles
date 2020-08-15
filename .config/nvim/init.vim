@@ -2,6 +2,7 @@
 
 " ----- Leader --------------------------------------------------------
 let mapleader=","                                   " Leader is comma
+let maplocalleader=" "
 
 "if !exists('g:vscode')
 "seems like vscode accepts current init.vim
@@ -144,7 +145,17 @@ set splitbelow
 set splitright
 
 " Specific spacing depening on filetype
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
+
+augroup type_python
+    au!
+    au FileType python setlocal expandtab
+    au FileType python setlocal tabstop=4
+    au FileType python setlocal softtabstop=4
+    au FileType python setlocal shiftwidth=4
+	au FileType python nnoremap <buffer> <LocalLeader>f :normal f(<CR>
+	au FileType python nnoremap <buffer> <LocalLeader>c :normal I#<CR>
+augroup END
+
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "endif                                           " g:vscode

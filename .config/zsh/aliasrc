@@ -7,7 +7,7 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
 	
 	# cli commands
 	alias grep="ggrep --color"
-	
+
 	# Editor commands
 	alias vz="$EDITOR $ZDOTDIR/.zshrc"
 	alias vn="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
@@ -51,4 +51,7 @@ alias ..="cd .."
 
 # Git bare
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-
+alias ds="dotfiles status"
+alias dad="dotfiles add $@"
+alias dc="dotfiles commit -m $1"
+alias dp="dotfiles push dotfiles --mirror"
