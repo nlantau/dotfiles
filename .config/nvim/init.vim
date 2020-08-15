@@ -2,7 +2,7 @@
 
 " ----- Leader --------------------------------------------------------
 let mapleader=","                                   " Leader is comma
-let maplocalleader=" "
+let maplocalleader="-"
 
 "if !exists('g:vscode')
 "seems like vscode accepts current init.vim
@@ -26,6 +26,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'neomake/neomake'
+
 call plug#end()
 
 " ----- Leader & Mappings ---------------------------------------------
@@ -45,6 +47,10 @@ let g:airline#extensions#tabline#buffer_nr_show = 0
 " ----- Deoplete ------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 
+" ----- Flake8 --------------------------------------------------------
+let g:neomake_python_python_maker = neomake#makers#ft#python#python()
+let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
+
 " ----- FZF & Buffers -------------------------------------------------
 let g:fzf_buffers_jump = 1
 
@@ -57,12 +63,12 @@ nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>sv :source $NVIMRC<CR>
 
 " ----- Navigation ----------------------------------------------------
-nnoremap <S-j> 10j<CR>                                      
-vnoremap <S-j> 10j<CR>                                      
-nnoremap <S-k> 10k<CR>                                      
-vnoremap <S-k> 10k<CR>                                      
-nnoremap <S-d> <C-d>                                    
-nnoremap <S-u> <C-u>                                    
+nnoremap <S-j> 10j<CR>
+vnoremap <S-j> 10j<CR>
+nnoremap <S-k> 10k<CR>
+vnoremap <S-k> 10k<CR>
+nnoremap <S-d> <C-d>
+nnoremap <S-u> <C-u>
 
 " ----- Marking -------------------------------------------------------
 nnoremap ' `
@@ -126,7 +132,7 @@ set showbreak=↪
 set autoindent
 set so=7
 set showmatch
-set cursorline 
+set cursorline
 set wildmenu   " visual autocomplete for command menu
 
 " Tab control
@@ -137,26 +143,35 @@ set shiftwidth=4 " number of spaces to use for indent and unindent
 set shiftround " round indent to a multiple of 'shiftwidth'
 
 set showcmd                                     " show command in bottom bar
-set laststatus=0
-set nobackup 
+set laststatus=2
+set nobackup
 set noswapfile
 set updatetime=100                              " default = 400
-set splitbelow 
+set splitbelow
 set splitright
+
+" Buffers
+set hidden				" Allows for switching unsaved buffers
 
 " Specific spacing depening on filetype
 
 augroup type_python
-    au!
-    au FileType python setlocal expandtab
-    au FileType python setlocal tabstop=4
-    au FileType python setlocal softtabstop=4
-    au FileType python setlocal shiftwidth=4
+	au!
+	au FileType python setlocal expandtab
+	au FileType python setlocal tabstop=4
+	au FileType python setlocal softtabstop=4
+	au FileType python setlocal shiftwidth=4
 	au FileType python nnoremap <buffer> <LocalLeader>f :normal f(<CR>
 	au FileType python nnoremap <buffer> <LocalLeader>c :normal I#<CR>
+	" clear whitespace
+	au BufWritePre python :%s/\s\+$//e
 augroup END
 
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+autocmd FileType vim setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+autocmd BufWritePost * Neomake
 
 "endif                                           " g:vscode
 

@@ -18,7 +18,7 @@ zstyle ':vcs_info:git:*' formats "%F{red}%s%f %b"
 # Auto/tab complete, colors & git prompt
 autoload -Uz compinit && compinit   # Completion
 autoload -U colors && colors		# Colored prompt output
-autoload -Uz vcs_info 			    # Git prompt 
+autoload -Uz vcs_info				# Git prompt 
 precmd() { vcs_info } 
 
 # vi mode
@@ -37,15 +37,14 @@ PROMPT="λ %F{green}%1~ %f> "
 #PROMPT="$ %1d > "
 RPROMPT='${vcs_info_msg_0_}' 
 
-# >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
-        __conda_setup="$('/Users/nlantau/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-        if [ $? -eq 0 ]; then; eval "$__conda_setup"; else
-            if [ -f "/Users/nlantau/miniconda3/etc/profile.d/conda.sh" ]; then
-                . "/Users/nlantau/miniconda3/etc/profile.d/conda.sh"
-            else; export PATH="/Users/nlantau/miniconda3/bin:$PATH"; fi; fi;
-        unset __conda_setup
-        # Don't want conda to be activated from start
-        conda deactivate; fi
+	__conda_setup="$('/Users/nlantau/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+	if [ $? -eq 0 ]; then; eval "$__conda_setup"; else
+		if [ -f "/Users/nlantau/miniconda3/etc/profile.d/conda.sh" ]; then
+			. "/Users/nlantau/miniconda3/etc/profile.d/conda.sh"
+		else; export PATH="/Users/nlantau/miniconda3/bin:$PATH"; fi; fi;
+	unset __conda_setup
+	# Don't want conda to be activated from start
+	conda deactivate; fi
 
