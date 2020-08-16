@@ -3,6 +3,7 @@
 # Source aliases, fzf (incl. functions)
 [ -f "${ZDOTDIR}/aliasrc" ] && source "${ZDOTDIR}/aliasrc"
 [ -f "${XDG_CONFIG_HOME}/fzf/.fzf.zsh" ] && source "${XDG_CONFIG_HOME}/fzf/.fzf.zsh"
+[ -f "${XDG_CONFIG_HOME}/lscolors.sh" ] && source "${XDG_CONFIG_HOME}/lscolors.sh"
 
 # Load completions system
 zmodload -i zsh/complist

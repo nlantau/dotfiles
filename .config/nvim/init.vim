@@ -47,9 +47,28 @@ let g:airline#extensions#tabline#buffer_nr_show = 0
 " ----- Deoplete ------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 
-" ----- Flake8 --------------------------------------------------------
+" ----- Python --------------------------------------------------------
 let g:neomake_python_python_maker = neomake#makers#ft#python#python()
 let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
+
+" Flake8 when save
+autocmd BufWritePost * Neomake
+
+augroup type_python
+	au!
+	au FileType python setlocal expandtab
+	au FileType python setlocal tabstop=4
+	au FileType python setlocal softtabstop=4
+	au FileType python setlocal shiftwidth=4
+	" Find next "("
+	au FileType python nnoremap <buffer> <LocalLeader>f :normal f(<CR>
+	" Comment
+	au FileType python nnoremap <buffer> <LocalLeader>c :normal I#<CR>
+	" clear whitespace
+	au BufWritePre python :%s/\s\+$//e
+augroup END
+
+
 
 " ----- FZF & Buffers -------------------------------------------------
 let g:fzf_buffers_jump = 1
@@ -60,7 +79,7 @@ nnoremap <Leader>t :bd<CR>
 nnoremap <Leader>l :ls<CR>
 
 " ----- Neovim --------------------------------------------------------
-nnoremap <Leader>sv :source $NVIMRC<CR>
+nnoremap <Leader>sv :source $NVIMRC<CR><ESC>
 
 " ----- Navigation ----------------------------------------------------
 nnoremap <S-j> 10j<CR>
@@ -78,6 +97,7 @@ nnoremap <ESC> :noh<CR><ESC>
 
 " ----- Save And Close ------------------------------------------------
 inoremap jk <ESC>
+vnoremap jk <ESC>
 nnoremap <Leader><Leader> :w<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
@@ -155,23 +175,10 @@ set hidden				" Allows for switching unsaved buffers
 
 " Specific spacing depening on filetype
 
-augroup type_python
-	au!
-	au FileType python setlocal expandtab
-	au FileType python setlocal tabstop=4
-	au FileType python setlocal softtabstop=4
-	au FileType python setlocal shiftwidth=4
-	au FileType python nnoremap <buffer> <LocalLeader>f :normal f(<CR>
-	au FileType python nnoremap <buffer> <LocalLeader>c :normal I#<CR>
-	" clear whitespace
-	au BufWritePre python :%s/\s\+$//e
-augroup END
-
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 autocmd FileType vim setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-autocmd BufWritePost * Neomake
 
 "endif                                           " g:vscode
 
