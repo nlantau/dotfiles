@@ -22,12 +22,12 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
 	alias sa="cd $SCHOOLDIR"
 	
 	# exec alias
-	alias code='/Applications/Visual\ Studio\ Code.app/
-	        \Contents/MacOS/Electron > /dev/null 2>&1 &!; cd $HOME'
-	alias discord='/Applications/
-	        \Discord.app/Contents/MacOS/Discord > /dev/null 2>&1 &!; cd $HOME'
-	alias subl='/Applications/Sublime\ Text.app/Contents/
-	        \MacOS/Sublime\ Text > /dev/null 2>&1 &!; cd $HOME'
+	alias code="open /Applications/Visual\ Studio\ Code.app/
+	        \Contents/MacOS/Electron > /dev/null 2>&1 &!"
+	alias discord="open /Applications/Discord.app/
+					\Contents/MacOS/Discord > /dev/null 2>&1 &!"
+	alias subl="open /Applications/Sublime\ Text.app/
+					\Contents/MacOS/Sublime\ Text > /dev/null 2>&1 &!"
 	
 elif [ "$(uname 2> /dev/null)" != "Darwin" ]; then
 
