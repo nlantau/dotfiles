@@ -14,31 +14,32 @@ fi
 
 # Start installation
 
-echo -e "${light_green}Installing dotfiles ${default} \n"
+echo -e "${red}Installing dotfiles ${default} \n"
 echo -e "[${green}*${default}] Checking your system..."
 
 # Check OS
 
 if [[ "$(uname)" == "Darwin" ]]; then
-	echo -e "> Running on MacOS \n"
+	echo -e "${underline}> Running on MacOS ${reset}\n"
+
 	echo -e "[${green}*${default}] Checking if HomeBrew is installed..."
 	
 	# Check Brew
 	if test ! "$( command -v brew)"; then
-		echo -e "> Installing HomeBrew \n"
+		echo -e "${underline}> Installing HomeBrew \n${reset}"
 		ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
 
 	elif test "$( command -v brew)"; then
-		echo -e "> HomeBrew already installed. Skipping...\n"
+		echo -e "${underline}> HomeBrew already installed. Skipping...\n${reset}"
 
 	fi
 
 		# Install Brewfile
-		echo -e "> Installing HomeBrew Bundle.."
-		brew bundle install
+		echo -e "${underline}> Installing HomeBrew Bundle..\n${reset}"
+		#brew bundle install
 
 else
-	echo -e "> Install.sh only modified for MacOS. \n"
+	echo -e "${underline}> Install.sh only modified for MacOS. \n${reset}"
 	exit
 
 fi
@@ -52,15 +53,15 @@ echo -e "[${green}*${default}] Checking current shell..."
 
 if [[ $SHELL == $(which zsh) ]]; then
 	SYS_SHELL="$(echo $SHELL | cut -d / -f 3 )"
-	echo -e "> Active shell: ${SYS_SHELL}\n" 
+	echo -e "${underline}> Active shell: ${SYS_SHELL}\n${reset}" 
 	
 # If current is bash, set zsh as default
 
 elif [[ $SHELL == $(which bash) ]]; then
-	echo -e "> Bash active..."
+	echo -e "${underline}> Bash active...${reset}"
 	echo -e "> Changing to ZSH..."
 	chsh -s "$(command -v zsh)"
-	echo -e "> Default shell changed to ZSH\n"
+	echo -e "${underline}> Default shell changed to ZSH\n${reset}"
 
 fi
 
@@ -72,14 +73,14 @@ fi
 echo -e "[${green}*${default}] Checking if virtualenvs directory exists..."
 
 if ! [[ -d $HOME/.virtualenvs ]]; then
-	echo -e "> Creating virtualenvs directory..."
+	echo -e "${underline}> Creating virtualenvs directory...${reset}"
 	mkdir -p ~/.virtualenvs
 	echo -e "> Done\n"
 	# Check venv 
 	# if no venv, create venv and pip install neovim dependencies
 
 else
-	echo -e "> ${VIRDIR} already exists. Skipping...\n"
+	echo -e "${underline}> ${VIRDIR} already exists. Skipping...\n${reset}"
 	echo -e "[${green}*${default}] Checking existing venvs..."
 	echo -e "> Current venvs in $VIRDIR:"
 	
