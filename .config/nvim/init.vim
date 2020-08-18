@@ -31,6 +31,24 @@ let NERDTreeShowHidden=1
 
 " ----- Gruvbox -------------------------------------------------------
 let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_light = 'hard'
+let g:gruvbox_invert_selection = 0
+
+
+let g:isLight=1
+
+function ToggleBG()
+	if g:isLight == 0
+		set background=light
+		let g:isLight=1
+	else
+		set background=dark
+		let g:isLight = 0
+	endif
+endfunction
+
+nnoremap <Leader>cc :call ToggleBG()<CR>
+
 
 " ----- plist  --------------------------------------------------------
 let g:plist_display_format = 'xml'
@@ -44,6 +62,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:deoplete#enable_at_startup = 1
 
 " ----- Python --------------------------------------------------------
+let g:neomake_python_pep8_exe = 'python3'
+let g:neomake_python_enable_makers = ['pep8']
 let g:neomake_python_python_maker = neomake#makers#ft#python#python()
 let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
 
@@ -65,6 +85,13 @@ augroup type_python
 augroup END
 
 
+" ----- Git Fugitive --------------------------------------------------
+nnoremap <Leader>ga :Gwrite<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gl :Glog<CR>
+nnoremap <Leader>gd :Git difftool<CR>
 
 " ----- FZF & Buffers -------------------------------------------------
 let g:fzf_buffers_jump = 1
@@ -82,7 +109,6 @@ nnoremap <Leader>vs :ls<CR>:vert sb
 
 " Terminal buffer 
 tnoremap <Esc> <C-\><C-n>
-
 
 " ----- Neovim --------------------------------------------------------
 nnoremap <Leader>sv :source $NVIMRC<CR><ESC>
@@ -136,7 +162,6 @@ nnoremap <Leader>v :vsplit $XDG_CONFIG_HOME/nvim/init.vim<CR>
 nnoremap <Leader>b :NERDTreeToggle<CR>
 
 " ----- Coloring ------------------------------------------------------
-set background=dark
 syntax enable
 colorscheme gruvbox
 
@@ -180,16 +205,8 @@ set splitright
 set hidden
 
 " Specific spacing depening on filetype
-
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
 autocmd FileType vim setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-
-"endif                                           " g:vscode
-
-
-
 
 
 " end init.vim
