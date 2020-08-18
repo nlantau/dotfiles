@@ -55,5 +55,4 @@ alias ds="dotfiles status"
 alias dad="dotfiles add -u"
 #alias dc='dotfiles commit -m ${@:-update}'
 alias dp="dotfiles push dotfiles --mirror"
-
 dc() {dotfiles commit -m "${@:-update}";}
