@@ -52,6 +52,6 @@ alias ..="cd .."
 # Git bare
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias ds="dotfiles status"
-alias dad="dotfiles add $@"
+alias dad="dotfiles add -u"
 alias dc="dotfiles commit -m $1"
 alias dp="dotfiles push dotfiles --mirror"

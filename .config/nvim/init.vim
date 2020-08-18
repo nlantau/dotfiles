@@ -62,8 +62,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:deoplete#enable_at_startup = 1
 
 " ----- Python --------------------------------------------------------
-let g:neomake_python_pep8_exe = 'python3'
-let g:neomake_python_enable_makers = ['pep8']
+"let g:neomake_python_pep8_exe = 'python3'
+"let g:neomake_python_enable_makers = ['pep8']
 let g:neomake_python_python_maker = neomake#makers#ft#python#python()
 let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
 
