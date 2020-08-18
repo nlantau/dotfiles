@@ -92,6 +92,9 @@ nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>gd :Git difftool<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gr :Gread<CR>
+nnoremap <Leader>ge :Gedit<CR>
 
 " ----- FZF & Buffers -------------------------------------------------
 let g:fzf_buffers_jump = 1
