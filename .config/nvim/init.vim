@@ -38,7 +38,7 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
 
 let g:isLight=1
-function ToggleBG()
+function! ToggleBG()
 	if g:isLight == 0
 		set background=light
 		let g:isLight=1
@@ -179,7 +179,9 @@ set nobackup
 set splitright
 set splitbelow
 set noswapfile
+set cmdheight=2
 set laststatus=2
+set nowritebackup
 set updatetime=100
 
 " Specific spacing depening on filetype
