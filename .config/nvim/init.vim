@@ -2,7 +2,7 @@
 
 " ----- Leader --------------------------------------------------------
 let mapleader=","
-let maplocalleader="-"
+let maplocalleader=" "
 
 " ----- neovim3 venv --------------------------------------------------
 let g:python3_host_prog ='$VIRENVDIR/neovim3/bin/python'
@@ -71,6 +71,7 @@ augroup type_python
 	au FileType python setlocal softtabstop=4
 	au FileType python nnoremap <buffer> <LocalLeader>f :normal f(<CR>
 	au FileType python nnoremap <buffer> <LocalLeader>c :normal I#<CR>
+	au FileType python nnoremap <buffer> <LocalLeader>r :w<CR>:!python3 %<CR>
 	au BufWritePre python :%s/\s\+$//e
 augroup END
 
@@ -85,9 +86,11 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gd :Git difftool<CR>
 
-" ----- Quickfix ------------------------------------------------------
+" ----- Quickfix & Location List --------------------------------------
 nnoremap <Leader>cc :ccl<CR>
-nnoremap <Leader>cf :copen<CR>
+nnoremap <Leader>lc :lcl<CR>
+nnoremap <Leader>co :copen<CR>
+nnoremap <Leader>lo :lopen<CR>
 
 " -----  Buffers ------------------------------------------------------
 tnoremap <Esc> <C-\><C-n>
@@ -179,7 +182,7 @@ set nobackup
 set splitright
 set splitbelow
 set noswapfile
-set cmdheight=2
+set cmdheight=1
 set laststatus=2
 set nowritebackup
 set updatetime=100
