@@ -2,7 +2,7 @@
 
 " ----- Leader --------------------------------------------------------
 let mapleader=","
-let maplocalleader=" "
+let maplocalleader="-"
 
 " ----- neovim3 venv --------------------------------------------------
 let g:python3_host_prog ='$VIRENVDIR/neovim3/bin/python'
@@ -17,6 +17,7 @@ Plug 'darfink/vim-plist'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
+Plug 'davidhalter/jedi-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
@@ -54,6 +55,11 @@ let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
+" ----- Jedi ----------------------------------------------------------
+let g:jedi#completions_enabled = 0
+let g:jedi#use_splits_not_buffers = "right"
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
 " ----- Python --------------------------------------------------------
 let g:neomake_open_list = 2
 let g:neomake_python_pep8_exe = 'python3'
@@ -75,6 +81,9 @@ augroup type_python
 	au BufWritePre python :%s/\s\+$//e
 augroup END
 
+" ----- Pum -----------------------------------------------------------
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
 " ----- Git Fugitive --------------------------------------------------
 nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>gp :Gpush<CR>
@@ -87,19 +96,19 @@ nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gd :Git difftool<CR>
 
 " ----- Quickfix & Location List --------------------------------------
-nnoremap <Leader>cc :ccl<CR>
+nnoremap <Leader>qc :ccl<CR>
 nnoremap <Leader>lc :lcl<CR>
-nnoremap <Leader>co :copen<CR>
+nnoremap <Leader>qo :copen<CR>
 nnoremap <Leader>lo :lopen<CR>
 
 " -----  Buffers ------------------------------------------------------
 tnoremap <Esc> <C-\><C-n>
-nnoremap <Leader>t :bd<CR>
-nnoremap <Leader>n :bnext<CR>
-nnoremap <Leader>s :ls<CR>:sb
+nnoremap <C-n> :bnext<CR>
+nnoremap <Leader>tc :bd<CR>
+nnoremap <Leader>sb :ls<CR>:sb
 nnoremap <Leader>f :Files ~/<CR>
 nnoremap <Leader>vs :ls<CR>:vert sb
-nnoremap <Leader>l :ls<CR>:b<space>
+nnoremap <Leader>bl :ls<CR>:b<space>
 
 " ----- Neovim --------------------------------------------------------
 nnoremap <Leader>sv :source $NVIMRC<CR><ESC>
@@ -114,13 +123,13 @@ vnoremap <S-k> 10k<CR>
 
 " ----- Marking -------------------------------------------------------
 nnoremap ' `
+
 " ----- Clear Highlight -----------------------------------------------
 nnoremap <ESC> :noh<CR><ESC>
 
 " ----- Save And Close ------------------------------------------------
 inoremap jk <ESC>
 nnoremap <Leader>x :x<CR>
-nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader><Leader> :w<CR>
 
@@ -129,19 +138,22 @@ nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
+nnoremap <C-c> <C-w>c
+nnoremap <C-s> <C-w>s
+nnoremap <C-v> <C-w>v
 nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
+nnoremap <C-r>s <C-w>=<CR>
 nnoremap <Silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <Silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
-
 " ----- Vertical Split init.vim ---------------------------------------
 nnoremap <Leader>v :vsplit $NVIMRC<CR>
-nnoremap <Leader>b :NERDTreeToggle<CR>
+nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap S :%s//g<Left><Left>
-nnoremap <Leader>r :reg<CR>
+nnoremap <C-r> :reg<CR>
 
 " ----- Coloring ------------------------------------------------------
 syntax enable
