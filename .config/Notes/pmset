@@ -1,0 +1,21 @@
+System-wide power settings:
+Currently in use:
+ lidwake              1
+ autopoweroff         1
+ standbydelayhigh     86400
+ autopoweroffdelay    28800
+ standbydelaylow      10800
+ standby              0
+ proximitywake        0
+ ttyskeepawake        1
+ hibernatemode        0
+ powernap             0
+ gpuswitch            2
+ hibernatefile        /var/vm/sleepimage
+ highstandbythreshold 50
+ displaysleep         0 (display sleep prevented by Amphetamine)
+ sleep                0 (sleep prevented by Amphetamine)
+ acwake               0
+ halfdim              1
+ tcpkeepalive         1
+ disksleep            0
