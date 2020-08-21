@@ -3,7 +3,6 @@
 # Source aliases, fzf (incl. functions)
 [ -f "${ZDOTDIR}/aliasrc" ] && source "${ZDOTDIR}/aliasrc"
 [ -f "${XDG_CONFIG_HOME}/fzf/.fzf.zsh" ] && source "${XDG_CONFIG_HOME}/fzf/.fzf.zsh"
-[ -f "${XDG_CONFIG_HOME}/lscolors.sh" ] && source "${XDG_CONFIG_HOME}/lscolors.sh"
 
 # Load completions system
 zmodload -i zsh/complist
@@ -35,7 +34,6 @@ setopt PROMPT_SUBST
 
 # PS1 & RPS1
 PROMPT="λ %F{green}%1~ %f> "
-#PROMPT="$ %1d > "
 RPROMPT='${vcs_info_msg_0_}' 
 
 # !! Contents within this block are managed by 'conda init' !!

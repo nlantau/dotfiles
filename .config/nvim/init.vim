@@ -104,7 +104,7 @@ nnoremap <Leader>lo :lopen<CR>
 " -----  Buffers ------------------------------------------------------
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-n> :bnext<CR>
-nnoremap <Leader>tc :bd<CR>
+nnoremap <Leader>bc :bd<CR>
 nnoremap <Leader>sb :ls<CR>:sb
 nnoremap <Leader>f :Files ~/<CR>
 nnoremap <Leader>vs :ls<CR>:vert sb
@@ -134,18 +134,18 @@ nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader><Leader> :w<CR>
 
 " ----- Split Navigation & Window Resize ------------------------------
+nnoremap <C-c> <C-w>c
+nnoremap <C-s> <C-w>s
+nnoremap <C-v> <C-w>v
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
-nnoremap <C-c> <C-w>c
-nnoremap <C-s> <C-w>s
-nnoremap <C-v> <C-w>v
+nnoremap <C-r>s <C-w>=<CR>
 nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
-nnoremap <C-r>s <C-w>=<CR>
 nnoremap <Silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <Silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
