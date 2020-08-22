@@ -1,9 +1,15 @@
 " nlantau .vimrc
+" My intentions are to keep my .vimrc small with 
+" only 'necessary' plugins.
+" I'll keep some mappings, while trying to
+" change habbit of using commands instead
+
 
 
 " ----- Leader --------------------------------------------------------------
 let mapleader=","
 let localmapleader="-"
+
 
 " ----- Vim Plug ------------------------------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -17,7 +23,14 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+Plug 'andviro/flake8-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
 
 " ----- Gruvbox -------------------------------------------------------------
 let g:gruvbox_contrast_dark = 'hard'
@@ -35,9 +48,25 @@ function! ToggleBG()
 endfunction
 nnoremap <Leader>tb :call ToggleBG()<CR>
 
+
 " ----- Color ---------------------------------------------------------------
 syntax enable
 colorscheme gruvbox
+
+
+" ----- Pop Up Tabbing ------------------------------------------------------
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+
+" ----- Airline -------------------------------------------------------------
+let g:airline_powerline_fonts = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
 
 " ----- au Vim --------------------------------------------------------------
 augroup myVim
@@ -48,6 +77,7 @@ augroup myVim
 	au FileType vim setlocal softtabstop=2
 augroup END
 
+
 " ----- au sh ---------------------------------------------------------------
 augroup mySh
 	au!
@@ -55,26 +85,33 @@ augroup mySh
 	au FileType sh setlocal tabstop=2
 	au FileType sh setlocal shiftwidth=2
 	au FileType sh setlocal softtabstop=2
+augroup END
+
+
+" ----- au python -----------------------------------------------------------
+let g:PyFlakeOnWrite = 1
+let g:PyFlakeCheckers = 'pep8,mccabe'
+
+augroup myPython
+	au!
+	au FileType python setlocal expandtab
+	au FileType python setlocal tabstop=4
+	au FileType python setlocal shiftwidth=4
+	au FileType python setlocal softtabstop=4
+augroup END
 
 
 " ----- .vimrc --------------------------------------------------------------
 nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <Leader>vv :vsplit $MYVIMRC<CR>
 
-" Clear highlight
-nnoremap <ESC> :noh<CR><ESC>
-
-" Marking
 nnoremap ' `
-
-" Escape terminal inside vim
+inoremap jk <ESC>
 tnoremap <Esc> <C-\><C-n>
-
+nnoremap - :noh<CR><ESC>
+nnoremap <Leader>nt :NERDTreeToggle<CR>
 
 " ----- Save And Close ------------------------------------------------
-
-" Escape insert mode with 'jk'
-inoremap jk <ESC>
-
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader><Leader> :w<CR>
@@ -87,6 +124,14 @@ nnoremap <S-j> 10j<CR>
 vnoremap <S-j> 10j<CR>
 nnoremap <S-k> 10k<CR>
 vnoremap <S-k> 10k<CR>
+
+
+" -----  Buffers ------------------------------------------------------
+nnoremap <C-n> :bnext<CR>
+nnoremap <Leader>bc :bd<CR>
+nnoremap <Leader>sb :ls<CR>:sb
+nnoremap <Leader>vs :ls<CR>:vert sb
+nnoremap <Leader>bl :ls<CR>:b<space>
 
 
 " ----- Split Navigation & Window Resize ------------------------------
@@ -134,7 +179,7 @@ set tabstop=4
 set shiftround
 set shiftwidth=4
 set softtabstop=4
-
+set ruler
 set showcmd
 set nobackup
 set splitright
