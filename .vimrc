@@ -150,7 +150,6 @@ nnoremap <Leader>bl :ls<CR>:b<space>
 
 " ----- Split Navigation & Window Resize ------------------------------
 nnoremap <C-c> <C-w>c
-nnoremap <C-s> <C-w>s
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
