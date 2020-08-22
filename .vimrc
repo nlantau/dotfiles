@@ -8,8 +8,9 @@
 
 " ----- Leader --------------------------------------------------------------
 let mapleader=","
-let localmapleader="-"
-
+let maplocalleader=","
+filetype plugin indent on
+syntax on
 
 " ----- Vim Plug ------------------------------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -50,7 +51,6 @@ nnoremap <Leader>tb :call ToggleBG()<CR>
 
 
 " ----- Color ---------------------------------------------------------------
-syntax enable
 colorscheme gruvbox
 
 
@@ -98,6 +98,7 @@ augroup myPython
 	au FileType python setlocal tabstop=4
 	au FileType python setlocal shiftwidth=4
 	au FileType python setlocal softtabstop=4
+  au FileType python nnoremap <buffer> <LocalLeader>r :w<CR>:!clear;python3 %<CR>
 augroup END
 
 
@@ -108,7 +109,7 @@ nnoremap <Leader>vv :vsplit $MYVIMRC<CR>
 nnoremap ' `
 inoremap jk <ESC>
 tnoremap <Esc> <C-\><C-n>
-nnoremap - :noh<CR><ESC>
+nnoremap <Leader><ESC> :noh<CR><ESC>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 
 " ----- Save And Close ------------------------------------------------
