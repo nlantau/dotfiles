@@ -36,8 +36,8 @@ call plug#end()
 " ----- Gruvbox -------------------------------------------------------------
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
-
 let g:isLight=1
+
 function! ToggleBG() abort
   if g:isLight == 0
     set background=light
@@ -47,6 +47,7 @@ function! ToggleBG() abort
     let g:isLight=0
   endif
 endfunction
+
 nnoremap <Leader>tb :call ToggleBG()<CR>
 
 
