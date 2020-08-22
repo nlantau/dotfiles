@@ -1,4 +1,10 @@
 " nlantau nvim config (init.vim)
+" nvim is mainly used for VSCode since
+" VSCode plugin for Vim does not 
+" support reading .vimrc.
+" Lots of configs in init.vim is not supported
+" in VSCode, so clean-up is needed
+"
 
 " ----- Leader --------------------------------------------------------
 let mapleader=","
@@ -58,6 +64,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " ----- Jedi ----------------------------------------------------------
 let g:jedi#completions_enabled = 0
 let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#documentation_command = "<C-D>"
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " ----- Python --------------------------------------------------------
