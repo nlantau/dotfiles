@@ -5,6 +5,7 @@
 * .zshrc
 * aliasrc
 * .fzf
+* .vimrc
 * nvim/init.vim
 * Notes/git_bare
 * functions
@@ -23,6 +24,7 @@
 
 ### TODO
 - [x] UNIX/Linux intercompatibility
+- [x] Switch nvim -> vim
 - [ ] Complete install.sh
 - [ ] Implement on Manjaro 
 
