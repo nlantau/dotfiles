@@ -1,8 +1,8 @@
 #!/usr/bin/zsh
 
 # Default programs
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="vim"
+export VISUAL="vim"
 
 # XDG Base Directory 
 export XDG_CONFIG_HOME="$HOME/.config"

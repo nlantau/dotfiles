@@ -76,12 +76,13 @@ augroup type_python
 	au FileType python setlocal shiftwidth=4
 	au FileType python setlocal softtabstop=4
 	au FileType python nnoremap <buffer> <LocalLeader>f :normal f(<CR>
-	au FileType python nnoremap <buffer> <LocalLeader>c :normal I#<CR>
+	au FileType python nnoremap <buffer> <LocalLeader>c :normal I# <CR>
 	au FileType python nnoremap <buffer> <LocalLeader>r :w<CR>:!python3 %<CR>
 	au BufWritePre python :%s/\s\+$//e
 augroup END
 
-" ----- Pum -----------------------------------------------------------
+" ----- NERDTree & Pop-up ---------------------------------------------
+nnoremap <Leader>nt :NERDTreeToggle<CR>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " ----- Git Fugitive --------------------------------------------------
@@ -102,6 +103,7 @@ nnoremap <Leader>qo :copen<CR>
 nnoremap <Leader>lo :lopen<CR>
 
 " -----  Buffers ------------------------------------------------------
+nnoremap <C-r> :reg<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-n> :bnext<CR>
 nnoremap <Leader>bc :bd<CR>
@@ -111,6 +113,7 @@ nnoremap <Leader>vs :ls<CR>:vert sb
 nnoremap <Leader>bl :ls<CR>:b<space>
 
 " ----- Neovim --------------------------------------------------------
+nnoremap <Leader>vv :vsplit $NVIMRC<CR>
 nnoremap <Leader>sv :source $NVIMRC<CR><ESC>
 
 " ----- Navigation ----------------------------------------------------
@@ -136,7 +139,7 @@ nnoremap <Leader><Leader> :w<CR>
 " ----- Split Navigation & Window Resize ------------------------------
 nnoremap <C-c> <C-w>c
 nnoremap <C-s> <C-w>s
-nnoremap <C-v> <C-w>v
+"nnoremap <C-V> <C-w>v
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
@@ -149,11 +152,8 @@ nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <Silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
-" ----- Vertical Split init.vim ---------------------------------------
-nnoremap <Leader>v :vsplit $NVIMRC<CR>
-nnoremap <Leader>nt :NERDTreeToggle<CR>
+" ----- Search & Replace ----------------------------------------------
 nnoremap S :%s//g<Left><Left>
-nnoremap <C-r> :reg<CR>
 
 " ----- Coloring ------------------------------------------------------
 syntax enable
