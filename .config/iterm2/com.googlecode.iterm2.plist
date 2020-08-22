@@ -38279,9 +38279,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 303 850 724 0 0 1680 1027 </string>
+	<string>0 0 834 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 14 834 500 0 0 1680 1027 </string>
+	<string>840 0 834 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 0 954 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -39683,7 +39683,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>68D7E9A7-7597-4035-87FA-C1D0E6EA1B22</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>87</integer>
+	<integer>90</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverPromptToChangeOption</key>
@@ -40467,7 +40467,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-20T20:56:37Z</date>
+	<date>2020-08-22T21:00:20Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUSkippedVersion</key>
@@ -40475,7 +40475,7 @@
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>

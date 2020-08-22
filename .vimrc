@@ -38,19 +38,30 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
 
 let g:isLight=1
-function! ToggleBG()
-	if g:isLight == 0
-		set background=light
-		let g:isLight=1
-	else
-		set background=dark
-		let g:isLight=0
-	endif
+function! ToggleBG() abort
+  if g:isLight == 0
+    set background=light
+    let g:isLight=1
+  else
+    set background=dark
+    let g:isLight=0
+  endif
 endfunction
 nnoremap <Leader>tb :call ToggleBG()<CR>
 
 
 " ----- Color ---------------------------------------------------------------
+function! MyHighlights() abort
+    highlight Visual ctermbg=white ctermfg=red 
+endfunction
+
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme gruvbox call MyHighlights()
+    autocmd InsertLeave * set cursorline
+    autocmd InsertEnter * set nocursorline
+augroup END
+
 colorscheme gruvbox
 
 
@@ -71,21 +82,21 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " ----- au Vim --------------------------------------------------------------
 augroup myVim
-	au!
-	au FileType vim setlocal expandtab
-        au FileType vim setlocal tabstop=8
-	au FileType vim setlocal shiftwidth=2
-	au FileType vim setlocal softtabstop=2
+    au!
+    au FileType vim setlocal expandtab
+    au FileType vim setlocal tabstop=8
+    au FileType vim setlocal shiftwidth=2
+    au FileType vim setlocal softtabstop=2
 augroup END
 
 
 " ----- au sh ---------------------------------------------------------------
 augroup mySh
-	au!
-	au FileType sh setlocal expandtab
-        au FileType sh setlocal tabstop=8
-	au FileType sh setlocal shiftwidth=2
-	au FileType sh setlocal softtabstop=2
+    au!
+    au FileType sh setlocal expandtab
+    au FileType sh setlocal tabstop=8
+    au FileType sh setlocal shiftwidth=2
+    au FileType sh setlocal softtabstop=2
 augroup END
 
 
@@ -94,17 +105,17 @@ let g:PyFlakeOnWrite = 1
 let g:PyFlakeCheckers = 'pep8,mccabe'
 
 augroup myPython
-	au!
-	au FileType python setlocal expandtab
-	au FileType python setlocal tabstop=8
-	au FileType python setlocal shiftwidth=4
-	au FileType python setlocal softtabstop=4
-  au FileType python nnoremap <buffer> <LocalLeader>r :w<CR>:!clear;python3 %<CR>
+    au!
+    au FileType python setlocal expandtab
+    au FileType python setlocal tabstop=8
+    au FileType python setlocal shiftwidth=4
+    au FileType python setlocal softtabstop=4
+    au FileType python nnoremap <buffer> <LocalLeader>r :w<CR>:!clear;python3 %<CR>
 augroup END
 
 
 " ----- .vimrc --------------------------------------------------------------
-nnoremap <Leader>sv :source $MYVIMRC<CR>
+autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
 nnoremap <Leader>vv :vsplit $MYVIMRC<CR>
 
 nnoremap ' `
