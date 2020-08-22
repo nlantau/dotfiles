@@ -55,6 +55,7 @@ colorscheme gruvbox
 
 
 " ----- Pop Up Tabbing ------------------------------------------------------
+"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
