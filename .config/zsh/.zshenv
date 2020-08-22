@@ -20,6 +20,6 @@ export GITHUBDIR="$HOME/Docs/GitHub"
 export VIRENVDIR="$HOME/.virtualenvs"
 export SCHOOLDIR="$HOME/Dropbox/Skola/7.\ Mot\ ingenjör"
 
-# Neovim
+# Vim
 export NVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
 export MYVIMRC="$HOME/.vimrc"
