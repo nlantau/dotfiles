@@ -117,6 +117,18 @@ nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader><Leader> :w<CR>
 
 
+" ----- Git Fugitive --------------------------------------------------
+nnoremap <Leader>gl :Glog<CR>
+nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gr :Gread<CR>
+nnoremap <Leader>ge :Gedit<CR>
+nnoremap <Leader>ga :Gwrite<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gd :Git difftool<CR>
+
+
 " ----- Navigation ----------------------------------------------------
 nnoremap <S-d> <C-d>
 nnoremap <S-u> <C-u>
