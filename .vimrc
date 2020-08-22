@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " ----- Gruvbox -------------------------------------------------------------
@@ -55,14 +56,29 @@ augroup mySh
 	au FileType sh setlocal shiftwidth=2
 	au FileType sh setlocal softtabstop=2
 
+
 " ----- .vimrc --------------------------------------------------------------
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
+" Clear highlight
+nnoremap <ESC> :noh<CR><ESC>
+
+" Marking
+nnoremap ' `
+
+" Escape terminal inside vim
+tnoremap <Esc> <C-\><C-n>
+
+
 " ----- Save And Close ------------------------------------------------
+
+" Escape insert mode with 'jk'
 inoremap jk <ESC>
+
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader><Leader> :w<CR>
+
 
 " ----- Navigation ----------------------------------------------------
 nnoremap <S-d> <C-d>
@@ -72,10 +88,10 @@ vnoremap <S-j> 10j<CR>
 nnoremap <S-k> 10k<CR>
 vnoremap <S-k> 10k<CR>
 
+
 " ----- Split Navigation & Window Resize ------------------------------
 nnoremap <C-c> <C-w>c
 nnoremap <C-s> <C-w>s
-nnoremap <C-v> <C-w>v
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
@@ -87,6 +103,7 @@ nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <Silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
 
 " ----- Editor Config -------------------------------------------------
 set encoding=UTF-8

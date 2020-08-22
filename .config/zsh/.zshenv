@@ -22,4 +22,4 @@ export SCHOOLDIR="$HOME/Dropbox/Skola/7.\ Mot\ ingenjör"
 
 # Neovim
 export NVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
-
+export MYVIMRC="$HOME/.vimrc"

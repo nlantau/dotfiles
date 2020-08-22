@@ -10,7 +10,7 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
 
 	# Editor commands
 	alias vz="$EDITOR $ZDOTDIR/.zshrc"
-	alias vn="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
+	alias vn="$EDITOR $MYVIMRC"
 	alias va="$EDITOR $ZDOTDIR/aliasrc"
 	alias vzp="$EDITOR $ZDOTDIR/.zprofile"
 	alias ali="$EDITOR $ZDOTDIR/aliasrc"
