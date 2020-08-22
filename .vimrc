@@ -73,7 +73,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 augroup myVim
 	au!
 	au FileType vim setlocal expandtab
-	au FileType vim setlocal tabstop=2
+        au FileType vim setlocal tabstop=8
 	au FileType vim setlocal shiftwidth=2
 	au FileType vim setlocal softtabstop=2
 augroup END
@@ -83,7 +83,7 @@ augroup END
 augroup mySh
 	au!
 	au FileType sh setlocal expandtab
-	au FileType sh setlocal tabstop=2
+        au FileType sh setlocal tabstop=8
 	au FileType sh setlocal shiftwidth=2
 	au FileType sh setlocal softtabstop=2
 augroup END
@@ -96,7 +96,7 @@ let g:PyFlakeCheckers = 'pep8,mccabe'
 augroup myPython
 	au!
 	au FileType python setlocal expandtab
-	au FileType python setlocal tabstop=4
+	au FileType python setlocal tabstop=8
 	au FileType python setlocal shiftwidth=4
 	au FileType python setlocal softtabstop=4
   au FileType python nnoremap <buffer> <LocalLeader>r :w<CR>:!clear;python3 %<CR>
@@ -187,11 +187,12 @@ set wrapmargin=8
 set relativenumber
 
 " Tab control
-set smarttab
-set tabstop=4
-set shiftround
-set shiftwidth=4
+set tabstop=8
 set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+set shiftround
 set ruler
 set showcmd
 set nobackup
