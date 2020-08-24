@@ -18,7 +18,7 @@ export SAVEHIST=10000
 # Special
 export GITHUBDIR="$HOME/Docs/GitHub"
 export VIRENVDIR="$HOME/.virtualenvs"
-export SCHOOLDIR="$HOME/Dropbox/Skola/7.\ Mot\ ingenjör"
+export SCHOOLDIR="$HOME/Dropbox/Skola/7_mot_ingenjor"
 
 # Vim
 export NVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"

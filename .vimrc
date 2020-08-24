@@ -179,6 +179,10 @@ nnoremap <Silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 set encoding=UTF-8
 set clipboard=unnamed
 
+" Vim fuzzy
+set path+=**
+
+
 " Searching
 set hlsearch
 set smartcase
