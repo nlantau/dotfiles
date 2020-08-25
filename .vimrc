@@ -112,6 +112,9 @@ augroup myPython
     au FileType python setlocal shiftwidth=4
     au FileType python setlocal softtabstop=4
     au FileType python nnoremap <buffer> <LocalLeader>r :w<CR>:!clear;python3 %<CR>
+    au FileType python 
+                \nnoremap <buffer> <LocalLeader>p 
+                \:-1read $HOME/.vim/snippets/.python<CR>GddggjA
 augroup END
 
 
