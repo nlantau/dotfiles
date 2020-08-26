@@ -91,6 +91,16 @@ augroup myVim
 augroup END
 
 
+" ----- Markdown ------------------------------------------------------------
+augroup myMD
+    au!
+    au FileType md setlocal expandtab
+    au FileType md setlocal tabstop=8
+    au FileType md setlocal shiftwidth=2
+    au FileType md setlocal softtabstop=2
+augroup END
+
+
 " ----- au sh ---------------------------------------------------------------
 augroup mySh
     au!
