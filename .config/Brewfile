@@ -31,6 +31,8 @@ brew "neofetch"
 brew "neovim"
 # Platform built on V8 to build network applications
 brew "node", link: false
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # Manage compile and link flags for libraries
 brew "pkg-config"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -41,4 +43,7 @@ brew "ranger"
 brew "tree"
 # General-purpose lossless data-compression library
 brew "zlib"
+# The next-generation plugin manager for zsh
+brew "zplug"
 cask "keycastr"
+cask "mactex-no-gui"
