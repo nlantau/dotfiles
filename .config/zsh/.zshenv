@@ -24,5 +24,3 @@ export SCHOOLDIR="$HOME/Dropbox/Skola/7_mot_ingenjor"
 export NVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
 export MYVIMRC="$HOME/.vimrc"
 
-# zplug (Not sure if it's a keeper)
-export ZPLUGINIT="/usr/local/Cellar/zplug/2.4.2/init.zsh"

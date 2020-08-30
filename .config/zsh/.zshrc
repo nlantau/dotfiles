@@ -4,9 +4,6 @@
 [ -f "${ZDOTDIR}/aliasrc" ] && source "${ZDOTDIR}/aliasrc"
 [ -f "${XDG_CONFIG_HOME}/fzf/.fzf.zsh" ] && source "${XDG_CONFIG_HOME}/fzf/.fzf.zsh"
 
-source "$ZPLUGINIT"
-zplug "softmoth/zsh-vim-mode"
-
 # Load completions system
 zmodload -i zsh/complist
 zstyle ':completion:*' menu select
