@@ -23,4 +23,3 @@ export SCHOOLDIR="$HOME/Dropbox/Skola/7_mot_ingenjor"
 # Vim
 export NVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
 export MYVIMRC="$HOME/.vimrc"
-

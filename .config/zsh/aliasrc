@@ -1,39 +1,39 @@
 #!/usr/bin/sh
 
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
-	
-	# ls color
-	colorflag="-G"
-	
-	# cli commands
-	alias grep="ggrep --color"
 
-	# Editor commands
-	alias vz="$EDITOR $ZDOTDIR/.zshrc"
-	alias vn="$EDITOR $MYVIMRC"
-	alias va="$EDITOR $ZDOTDIR/aliasrc"
-	alias ve="$EDITOR $ZDOTDIR/.zshenv"
-	alias ali="$EDITOR $ZDOTDIR/aliasrc"
-	
-	# cd alias
-	alias cg="cd $GITHUBDIR"
-	alias cc="cd $XDG_CONFIG_HOME"
-	alias da="cd $GITHUBDIR/DA110FHT20/"
-	alias sa="cd $SCHOOLDIR"
-	
-	# exec alias
-	alias code="open /Applications/Visual\ Studio\ Code.app/
-	        \Contents/MacOS/Electron > /dev/null 2>&1 &!"
-	alias discord="open /Applications/Discord.app/
-					\Contents/MacOS/Discord > /dev/null 2>&1 &!"
-	alias subl="open /Applications/Sublime\ Text.app/
-					\Contents/MacOS/Sublime\ Text > /dev/null 2>&1 &!"
-        alias python=/usr/local/bin/python3
+  # ls color
+  colorflag="-G"
+  
+  # cli commands
+  alias grep="ggrep --color"
+  
+  # Editor commands
+  alias vz="$EDITOR $ZDOTDIR/.zshrc"
+  alias vn="$EDITOR $MYVIMRC"
+  alias va="$EDITOR $ZDOTDIR/aliasrc"
+  alias ve="$EDITOR $ZDOTDIR/.zshenv"
+  alias ali="$EDITOR $ZDOTDIR/aliasrc"
+  
+  # cd alias
+  alias cg="cd $GITHUBDIR"
+  alias cc="cd $XDG_CONFIG_HOME"
+  alias da="cd $GITHUBDIR/DA110FHT20/"
+  alias sa="cd $SCHOOLDIR"
+  
+  # exec alias
+  alias code="open /Applications/Visual\ Studio\ Code.app/
+          \Contents/MacOS/Electron > /dev/null 2>&1 &!"
+  alias discord="open /Applications/Discord.app/
+  				\Contents/MacOS/Discord > /dev/null 2>&1 &!"
+  alias subl="open /Applications/Sublime\ Text.app/
+  				\Contents/MacOS/Sublime\ Text > /dev/null 2>&1 &!"
+  alias python=/usr/local/bin/python3
 	
 elif [ "$(uname 2> /dev/null)" != "Darwin" ]; then
 
-	# ls color
-	colorflag="--color"
+  # ls color
+  colorflag="--color"
 
 fi
 
