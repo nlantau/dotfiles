@@ -57,10 +57,10 @@ function! MyHighlights() abort
 endfunction
 
 augroup MyColors
-    autocmd!
-    autocmd ColorScheme gruvbox call MyHighlights()
-    autocmd InsertLeave * set cursorline
-    autocmd InsertEnter * set nocursorline
+  autocmd!
+  autocmd ColorScheme gruvbox call MyHighlights()
+  autocmd InsertLeave * set cursorline
+  autocmd InsertEnter * set nocursorline
 augroup END
 
 colorscheme gruvbox
