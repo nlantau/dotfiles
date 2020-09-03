@@ -117,6 +117,10 @@ augroup END
 augroup myC
   au!
   au BufRead,BufNewFile *.c setfiletype c
+  au FileType c setlocal expandtab
+  au FileType c setlocal tabstop=8
+  au FileType c setlocal shiftwidth=2
+  au FileType c setlocal softtabstop=2
 augroup END
 
 
