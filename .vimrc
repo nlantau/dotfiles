@@ -83,31 +83,40 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " ----- au Vim --------------------------------------------------------------
 augroup myVim
-    au!
-    au FileType vim setlocal expandtab
-    au FileType vim setlocal tabstop=8
-    au FileType vim setlocal shiftwidth=2
-    au FileType vim setlocal softtabstop=2
+  au!
+  au FileType vim setlocal expandtab
+  au FileType vim setlocal tabstop=8
+  au FileType vim setlocal shiftwidth=2
+  au FileType vimrc setlocal shiftwidth=2
+  au FileType vim setlocal softtabstop=2
+  au FileType vimrc setlocal softtabstop=2
 augroup END
 
 
 " ----- Markdown ------------------------------------------------------------
 augroup myMD
-    au!
-    au FileType md setlocal expandtab
-    au FileType md setlocal tabstop=8
-    au FileType md setlocal shiftwidth=2
-    au FileType md setlocal softtabstop=2
+  au!
+  au FileType md setlocal expandtab
+  au FileType md setlocal tabstop=8
+  au FileType md setlocal shiftwidth=2
+  au FileType md setlocal softtabstop=2
 augroup END
 
 
 " ----- au sh ---------------------------------------------------------------
 augroup mySh
-    au!
-    au FileType sh setlocal expandtab
-    au FileType sh setlocal tabstop=8
-    au FileType sh setlocal shiftwidth=2
-    au FileType sh setlocal softtabstop=2
+  au!
+  au FileType sh setlocal expandtab
+  au FileType sh setlocal tabstop=8
+  au FileType sh setlocal shiftwidth=2
+  au FileType sh setlocal softtabstop=2
+augroup END
+
+
+" ----- C -------------------------------------------------------------------
+augroup myC
+  au!
+  au BufRead,BufNewFile *.c setfiletype c
 augroup END
 
 
@@ -116,13 +125,13 @@ let g:PyFlakeOnWrite = 1
 let g:PyFlakeCheckers = 'pep8,mccabe'
 
 augroup myPython
-    au!
-    au FileType python setlocal expandtab
-    au FileType python setlocal tabstop=8
-    au FileType python setlocal shiftwidth=4
-    au FileType python setlocal softtabstop=4
-    au FileType python nnoremap <buffer> <LocalLeader>r :w<CR>:!clear;python3 %<CR>
-    au FileType python 
+  au!
+  au FileType python setlocal expandtab
+  au FileType python setlocal tabstop=8
+  au FileType python setlocal shiftwidth=4
+  au FileType python setlocal softtabstop=4
+  au FileType python nnoremap <buffer> <LocalLeader>r :w<CR>:!clear;python3 %<CR>
+  au FileType python 
                 \nnoremap <buffer> <LocalLeader>p 
                 \:-1read $HOME/.vim/snippets/.python<CR>GddggjA
 augroup END
@@ -137,6 +146,7 @@ inoremap jk <ESC>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader><ESC> :noh<CR><ESC>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
+
 
 " ----- Save And Close ------------------------------------------------
 nnoremap <Leader>x :x<CR>

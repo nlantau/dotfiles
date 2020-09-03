@@ -38253,7 +38253,7 @@
 	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
 	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
 	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
-	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0BzsZ2yLQ5W0iUmNzhe
 	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
 	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
 	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
@@ -38279,9 +38279,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 834 1027 0 0 1680 1027 </string>
+	<string>-720 441 714 436 -1440 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>840 0 834 1027 0 0 1680 1027 </string>
+	<string>830 303 850 724 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 0 954 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -38644,13 +38644,6 @@
 					<integer>40</integer>
 					<key>Text</key>
 					<string>Light Background</string>
-				</dict>
-				<key>0x7f-0x0</key>
-				<dict>
-					<key>Action</key>
-					<integer>16</integer>
-					<key>Text</key>
-					<string></string>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
@@ -39676,14 +39669,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{571, 1027}</string>
+		<string>{437, 873}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>68D7E9A7-7597-4035-87FA-C1D0E6EA1B22</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>90</integer>
+	<integer>100</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverPromptToChangeOption</key>
@@ -40467,7 +40460,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-22T21:00:20Z</date>
+	<date>2020-08-31T18:04:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUSkippedVersion</key>
