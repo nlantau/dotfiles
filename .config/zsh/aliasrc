@@ -28,7 +28,7 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
   				\Contents/MacOS/Discord > /dev/null 2>&1 &!"
   alias subl="open /Applications/Sublime\ Text.app/
   				\Contents/MacOS/Sublime\ Text > /dev/null 2>&1 &!"
-  alias python=/usr/local/bin/python3
+  # alias python=/usr/local/bin/python3
 	
 elif [ "$(uname 2> /dev/null)" != "Darwin" ]; then
 
