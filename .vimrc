@@ -93,6 +93,9 @@ augroup myVim
 augroup END
 
 
+" ----- au Make -------------------------------------------------------------
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
 " ----- Markdown ------------------------------------------------------------
 augroup myMD
   au!
