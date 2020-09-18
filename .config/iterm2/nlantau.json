@@ -167,12 +167,8 @@
       "Action" : 11
     },
     "0x44-0x60000" : {
-      "Action" : 40,
-      "Text" : "Brogrammer"
-    },
-    "0x7f-0x0" : {
-      "Text" : "",
-      "Action" : 16
+      "Text" : "Brogrammer",
+      "Action" : 40
     },
     "0x2d-0x40000" : {
       "Text" : "0x1f",
@@ -194,13 +190,13 @@
       "Text" : "[1;5A",
       "Action" : 10
     },
+    "0x4c-0x60000" : {
+      "Text" : "Light Background",
+      "Action" : 40
+    },
     "0xf707-0x20000" : {
       "Text" : "[1;2S",
       "Action" : 10
-    },
-    "0x4c-0x60000" : {
-      "Action" : 40,
-      "Text" : "Light Background"
     },
     "0xf70a-0x20000" : {
       "Text" : "[18;2~",
@@ -331,7 +327,7 @@
   },
   "Blur" : true,
   "Vertical Spacing" : 1,
-  "Normal Font" : "FuraCodeNerdFont 13",
+  "Normal Font" : "Iosevka-Term-Light 13",
   "Use Underline Color" : false,
   "Ansi 7 Color" : {
     "Green Component" : 0.8579363226890564,
