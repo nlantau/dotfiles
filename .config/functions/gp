@@ -1,2 +1,2 @@
 # Git function (default message "update")
-gp() {git add --all && git commit -m "${1:-update}" && git push --all;}
+gp() {git add -u && git commit -m "${1:-update}" && git push;}
