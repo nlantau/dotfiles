@@ -38275,15 +38275,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>419 417 841 470 0 0 1680 1027 </string>
+	<string>-1381 440 841 470 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-720 441 714 436 -1440 0 1440 877 </string>
+	<string>-909 51 745 769 -1920 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>830 303 850 724 0 0 1680 1027 </string>
+	<string>0 513 834 514 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 0 954 1057 0 0 1920 1057 </string>
+	<string>0 14 834 500 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>831 374 822 483 0 0 1680 1027 </string>
 	<key>NeverWarnAboutOverrides</key>
@@ -38894,7 +38894,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FuraCodeNerdFont 13</string>
+			<string>Iosevka-Term-Light 13</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -39656,27 +39656,27 @@
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Monaco</string>
 		<string>Fura Code Light</string>
+		<string>Iosevka Term</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{452, 699}</string>
+		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{437, 873}</string>
+		<string>{455, 724}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>68D7E9A7-7597-4035-87FA-C1D0E6EA1B22</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>100</integer>
+	<integer>104</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverPromptToChangeOption</key>
@@ -40460,7 +40460,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-31T18:04:28Z</date>
+	<date>2020-10-04T16:15:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUSkippedVersion</key>

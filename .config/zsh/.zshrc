@@ -26,7 +26,7 @@ bindkey -v
 
 # Add ~/.config/functions/ to fpath
 fpath=($HOME/.config/functions $fpath)
-autoload ez fa fd fdr ff gp gs s
+autoload ez fa fd fdr ff gacp gs s
 
 # setopt
 setopt PROMPT_SUBST

@@ -1,2 +1,0 @@
-# Git function (default message "update")
-gp() {git add -u && git commit -m "${1:-update}" && git push;}

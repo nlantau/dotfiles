@@ -55,3 +55,12 @@ alias ds="dotfiles status"
 alias dad="dotfiles add -u"
 alias dp="dotfiles push dotfiles --mirror"
 dc() {dotfiles commit -m "${1:-update}";}
+
+# Git - General
+alias gad="git add -u"
+alias gc="git commit -m \"minor changes\""
+alias gp="git push"
+alias gco="git checkout"
+
+
+
