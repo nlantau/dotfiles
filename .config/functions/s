@@ -1,1 +1,1 @@
-source $VIRENVDIR/"${1:-DA110FHT20}"/bin/activate
+source $VIRENVDIR/"${1:-DA110FHT20_3_9}"/bin/activate
