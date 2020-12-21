@@ -8,7 +8,7 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
   # Python3.9
   alias python3.9="/usr/local/Cellar/python@3.9/3.9.0/bin/python3.9"
   alias pip3.9="/usr/local/Cellar/python@3.9/3.9.0/bin/pip3.9"
-
+  alias aoc="cd /Users/nlantau/.config/aocd/53616c7465645f5f4122b94ebe4a0e58c08f7a9b5b99d857fc9bacb83aa815dfdcc82f4f213f3f951fb3267397fb90e8"
   # cli commands
   alias grep="ggrep --color"
   
