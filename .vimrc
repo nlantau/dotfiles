@@ -9,8 +9,9 @@
 " ----- Leader --------------------------------------------------------------
 let mapleader=","
 let maplocalleader=","
-filetype plugin indent on
 syntax on
+filetype on
+filetype plugin indent on
 
 " ----- Vim Plug ------------------------------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -28,7 +29,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+"Plug 'vim-python/python-syntax'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'neovimhaskell/haskell-vim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -36,17 +39,17 @@ call plug#end()
 " ----- Gruvbox -------------------------------------------------------------
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
-let g:isLight=1
+"let g:isLight=1
 
-function! ToggleBG() abort
-  if g:isLight == 0
-    set background=light
-    let g:isLight=1
-  else
-    set background=dark
-    let g:isLight=0
-  endif
-endfunction
+"function! ToggleBG() abort
+"  if g:isLight == 0
+"    set background=light
+"    let g:isLight=1
+"  else
+set background=dark
+"    let g:isLight=0
+"  endif
+"endfunction
 
 nnoremap <Leader>tb :call ToggleBG()<CR>
 
@@ -127,9 +130,22 @@ augroup myC
 augroup END
 
 
+" ----- Haskell -------------------------------------------------------------
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+let g:haskell_classic_highlighting = 1
+
+
+
 " ----- au python -----------------------------------------------------------
-let g:PyFlakeOnWrite = 1
-let g:PyFlakeCheckers = 'pep8,mccabe'
+"let g:PyFlakeOnWrite = 1
+"let g:PyFlakeCheckers = 'pep8,mccabe'
+"let g:python_highlight_all = 1
 
 augroup myPython
   au!
