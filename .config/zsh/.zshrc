@@ -46,7 +46,3 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
     unset __conda_setup
     # Don't want conda to be activated from start
     conda deactivate; fi
-
-
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
-[ -f "/Users/nlantau/.ghcup/env" ] && source "/Users/nlantau/.ghcup/env" # ghcup-env

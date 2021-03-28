@@ -25,3 +25,11 @@ export NVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
 export MYVIMRC="$HOME/.vimrc"
 source "$HOME/.cargo/env"
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
+# Metasploit
+PATH=$PATH:/opt/metasploit-framework/bin
+export PATH=$PATH:/opt/metasploit-framework/bin
+
+# OpenJDK & Haskell
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+[ -f "/Users/nlantau/.ghcup/env" ] && source "/Users/nlantau/.ghcup/env" # ghcup-env

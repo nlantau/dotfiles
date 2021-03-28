@@ -12,6 +12,7 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
   alias python3.9="/usr/local/Cellar/python@3.9/3.9.0/bin/python3.9"
   alias pip3.9="/usr/local/Cellar/python@3.9/3.9.0/bin/pip3.9"
   alias p="python"
+  alias ctf="source $HOME/Docs/GitHub/CTF2021/ctf/bin/activate"
   # cli commands
   alias grep="ggrep --color"
   
