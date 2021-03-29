@@ -265,3 +265,6 @@ set cmdheight=1
 set laststatus=2
 set nowritebackup
 set updatetime=100
+
+" tmux
+set t_ut=
