@@ -43,7 +43,6 @@ export PATH="/usr/local/go/bin:$PATH"
 PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
 export PATH
 
-
 # Term
 export TERM=xterm-256color
-
+tmux source-file $HOME/.tmux.conf
