@@ -70,5 +70,8 @@ alias gc="git commit -m \"minor changes\""
 alias gp="git push"
 alias gco="git checkout"
 
+# Networking
+alias nc="netcat"
+
 
 
