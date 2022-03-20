@@ -6,10 +6,11 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
   colorflag="-G"
 
   # For labs in Data Comms
-  alias pan="pandoc -V geometry:margin=0.1in -o scripts_cmd.pdf shell_cmd.md && open scripts_cmd.pdf"
+  alias pan1="pandoc -V geometry:margin=0.3in -o Todo_1.pdf Todo_1.md && open Todo_1.pdf"
+  alias pan2="pandoc -V geometry:margin=0.3in -o Todo_2.pdf Todo_2.md && open Todo_2.pdf"
 
   # Python3.9
-  alias python3.9="/usr/local/Cellar/python@3.9/3.9.0/bin/python3.9"
+  #alias python3.9="/usr/local/Cellar/python@3.9/3.9.0/bin/python3.9"
   alias pip3.9="/usr/local/Cellar/python@3.9/3.9.0/bin/pip3.9"
   alias p="python"
   alias ctf="source $HOME/Docs/GitHub/CTF2021/ctf/bin/activate"
@@ -29,14 +30,6 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
   alias da="cd $GITHUBDIR/DA110FHT20/"
   alias sa="cd $SCHOOLDIR"
   
-  # exec alias
-  alias code="open /Applications/Visual\ Studio\ Code.app/
-          \Contents/MacOS/Electron > /dev/null 2>&1 &!"
-  alias discord="open /Applications/Discord.app/
-  				\Contents/MacOS/Discord > /dev/null 2>&1 &!"
-  alias subl="open /Applications/Sublime\ Text.app/
-  				\Contents/MacOS/Sublime\ Text > /dev/null 2>&1 &!"
-  # alias python=/usr/local/bin/python3
 	
 elif [ "$(uname 2> /dev/null)" != "Darwin" ]; then
 

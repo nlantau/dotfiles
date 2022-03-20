@@ -45,4 +45,4 @@ export PATH
 
 # Term
 export TERM=xterm-256color
-tmux source-file $HOME/.tmux.conf
+#tmux source-file $HOME/.tmux.conf

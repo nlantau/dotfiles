@@ -70,12 +70,7 @@ colorscheme gruvbox
 
 
 " ----- Pop Up Tabbing ------------------------------------------------------
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Close preview when completion is done
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 
 " ----- Airline -------------------------------------------------------------
@@ -118,17 +113,28 @@ augroup mySh
   au FileType sh setlocal softtabstop=2
 augroup END
 
-
 " ----- C -------------------------------------------------------------------
+"  :retab <- changes .c-files to spaces
 augroup myC
   au!
   au BufRead,BufNewFile *.c setfiletype c
+  au FileType c setlocal shiftwidth=4
+  au FileType c setlocal tabstop=4
   au FileType c setlocal expandtab
-  au FileType c setlocal tabstop=8
-  au FileType c setlocal shiftwidth=2
-  au FileType c setlocal softtabstop=2
+  au FileType c setlocal listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+  "au FileType c setlocal list
 augroup END
 
+" ----- C++ -----------------------------------------------------------------
+augroup myCPP
+  au!
+  au BufRead,BufNewFile *.cpp setfiletype cpp
+  au FileType cpp setlocal shiftwidth=4
+  au FileType cpp setlocal tabstop=4
+  au FileType cpp setlocal expandtab
+  au FileType cpp setlocal listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+  "au FileType c setlocal list
+augroup END
 
 " ----- Haskell -------------------------------------------------------------
 let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
@@ -170,6 +176,8 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader><ESC> :noh<CR><ESC>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 
+" ----- xor list ------------------------------------------------------
+nnoremap <C-r>c :set list!<CR>
 
 " ----- Save And Close ------------------------------------------------
 nnoremap <Leader>x :x<CR>
